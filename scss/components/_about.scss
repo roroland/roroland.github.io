@@ -4,7 +4,6 @@
 
 .about{
   @media only screen and (max-width: 48em){
-    overflow: hidden;
     padding: 0;
   }
   &::after{
@@ -53,7 +52,6 @@
     grid-template-columns: repeat(6, 1fr);
     column-gap: $component-space;
     padding: 0 0 $component-space 0;
-    overflow: hidden;
     @media only screen and (min-width: 90em){
       padding: 0 0 $component-space 0;
     }
