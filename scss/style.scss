@@ -1,5 +1,111 @@
+
 @use 'abstracts' as *;
 @use 'components' as *;
+// --- Animaciones scroll-driven y de intro simplificadas ---
+
+// 1. Animación de entrada de bloques UI
+@keyframes fadeInUp {
+	from { opacity: 0; transform: translateY(40px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+.animatable {
+	opacity: 0;
+	animation: fadeInUp 0.75s var(--delay, 0s) ease-out forwards;
+	animation-timeline: view();
+	animation-range: entry 0% cover 40%;
+}
+
+// 2. Animación de países (stagger con nth-child)
+@keyframes countryIn {
+	from { opacity: 0; transform: scale(0.25) rotate(20deg) translateX(100px); }
+	to   { opacity: 1; transform: scale(1) rotate(0) translateX(0); }
+}
+.world--container ul li {
+	opacity: 0;
+	animation: countryIn 1s ease-out forwards;
+	animation-timeline: view();
+	animation-range: entry 0% cover 40%;
+}
+.world--container ul li:nth-child(1) { animation-delay: 0s; }
+.world--container ul li:nth-child(2) { animation-delay: 0.5s; }
+.world--container ul li:nth-child(3) { animation-delay: 1s; }
+.world--container ul li:nth-child(4) { animation-delay: 1.5s; }
+.world--container ul li:nth-child(5) { animation-delay: 2s; }
+
+// 3. Animación de decoraciones principales (swirl)
+@keyframes swirlMiddle {
+	0%   { transform: translateX(0); }
+	100% { transform: translateX(-400px); }
+}
+#middle {
+	animation: swirlMiddle 10s ease-in-out infinite alternate;
+}
+@keyframes swirlGrey {
+	0%   { transform: translateX(0); }
+	100% { transform: translateX(-600px); }
+}
+#grey {
+	animation: swirlGrey 8s ease-in-out infinite alternate;
+}
+@keyframes swirlRedTop {
+	0%   { transform: translateX(0); }
+	100% { transform: translateX(-550px); }
+}
+#redtop {
+	animation: swirlRedTop 7s linear infinite alternate;
+}
+@keyframes swirlBlue {
+	0%   { transform: translateX(0); }
+	100% { transform: translateX(-500px); }
+}
+#blue {
+	animation: swirlBlue 8s ease-in-out infinite alternate;
+}
+
+// 4. Menú sticky simplificado
+.mainNav {
+	position: sticky;
+	top: 0;
+	transition: box-shadow 0.3s, opacity 0.3s;
+	z-index: 10;
+}
+body:has(.mainNav.is-top) .mainNav {
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	opacity: 0.95;
+}
+
+// 5. Animación de intro secuencial
+@keyframes introHero {
+	from { opacity: 0; transform: translateY(40px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+.heroText {
+	opacity: 0;
+	animation: introHero 1s 0s ease-out forwards;
+}
+.intro--wrapper h3 {
+	opacity: 0;
+	animation: introHero 1s 1.5s ease-out forwards;
+}
+.intro--wrapper h4 {
+	opacity: 0;
+	animation: introHero 1s 2.5s ease-out forwards;
+}
+.mainNav {
+	opacity: 0;
+	animation: introHero 1s 3.5s ease-out forwards;
+}
+// Border animación opcional
+@keyframes borderColorFade {
+	from { border-color: transparent; }
+	to   { border-color: #E5E5E5; }
+}
+.heroText {
+	border: 2px solid transparent;
+	animation: borderColorFade 1s 2.5s ease-out forwards, introHero 1s 0s ease-out forwards;
+}
+
+
 
 
 

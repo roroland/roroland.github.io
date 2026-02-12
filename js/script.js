@@ -39,119 +39,15 @@ itemNav.forEach(function (item) {
   });
 });
 
-// UI blocks IO
-let uiAnimOptions = {
-  threshold: 0,
-  rootMargin: '-150px 0px'
-};
-let uiAnim = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.animation = `${entry.target.dataset.anim} .75s ${entry.target.dataset.delay} ease-out forwards`;
-      if(entry.target.dataset.duration != null){
-        entry.target.style.animation = `${entry.target.dataset.anim} ${entry.target.dataset.duration} ${entry.target.dataset.delay} ease-out forwards`;
-      }
-      uiAnim.unobserve(entry.target);
-    }
-    else {
-      entry.target.style.animation = 'none';
-      return;
-    }
-  })
-}, uiAnimOptions);
-itemAnim.forEach(itm => {
-  uiAnim.observe(itm)
-});
-// end
+// ...eliminada animación UI blocks IO...
 
-// Country UI
+// ...eliminada animación Country UI...
 
-let countryAnimOptions = {
-  threshold: 0,
-  rootMargin: '50px 0px'
-}
+// ...eliminada animación Main deco IO...
 
-let countryAnim = new IntersectionObserver((mispaises, self) => {
-  let paises = mispaises.map(pais => {
-    if (pais.isIntersecting) {
-      self.unobserve(pais.target);
-      console.log(pais.target);
-      return pais.target;
-    }
-  });
-  let tlmCountry = gsap.timeline({});
-  tlmCountry.fromTo(paises, { opacity: 0, scale: .25, rotation: 20, x: 100 }, { duration: 1, opacity: 1, scale: 1, rotation: 0, x: 0, ease: 'power1.out', stagger: 0.5 }, 2);
-  tlmCountry.to(paises, { opacity: .5, scale: .85, duration: 2, ease: 'sine.inOut', stagger: .5, yoyo: true, repeat: 10 }, "-=.5");
-}, countryAnimOptions);
+// ...eliminada lógica de lazy load de imágenes...
 
-itemCountryContent.forEach((paises) => {
-  countryAnim.observe(paises);
-})
-
-// Main deco IO
-let decoAnimOptions = {
-  threshold: 0.10
-}
-let decoAnim = new IntersectionObserver((decoitems) => {
-  decoitems.forEach(decoitem => {
-    if (decoitem.isIntersecting) {
-      tlm.resume();
-    }
-    else {
-      tlm.pause();
-      return;
-    }
-  })
-}, decoAnimOptions);
-itemDecoAnim.forEach(decoItem => {
-  decoAnim.observe(decoItem)
-});
-// end
-
-// Portfolio images IO
-let imgAnimOptions = {
-  threshold: 0,
-  rootMargin: '50px 0px'
-};
-let imgAnimObs = new IntersectionObserver((images) => {
-  images.forEach(image => {
-    if (image.isIntersecting) {
-      let obsSrc = image.target.dataset.source;
-      image.target.src = obsSrc;
-      imgSrc = obsSrc;
-      image.target.classList.add('is-active');
-      imgAnimObs.unobserve(image.target);
-    } 
-  })
-}, imgAnimOptions);
-imgLazy.forEach(item => {
-  imgAnimObs.observe(item);
-});
-// end
-
-// Menu wrapper IO
-const navWrapper = document.querySelector('.menuTop');
-const navWrapperMenu = document.querySelector('.mainNav');
-
-const options = {
-  root: document.body.main, 
-  threshold: 0
-}
-function handleIntersection(entries) {
-  entries.map((entry) => {
-    if (entry.isIntersecting) {
-      navWrapperMenu.classList.remove('is-top');
-      // console.log('in');
-    } else {
-      navWrapperMenu.classList.add('is-top');
-      // console.log('out');
-    }
-  });
-}
-
-const menuobserver = new IntersectionObserver(handleIntersection, options);
-menuobserver.observe(navWrapper);
-// end
+// ...eliminada lógica de sticky menu JS...
 
 
 // Feature
@@ -286,42 +182,9 @@ function subRun() {
   })
 }
 
-// Gsap interactions - swirl decoration
-const tlm = gsap.timeline({});
-const decomiddle = document.querySelector('#middle');
-const decogrey = document.querySelector('#grey');
-const decoredtop = document.querySelector('#redtop');
-const decoblue = document.querySelector('#blue');
-
-tlm.pause();
-
-tlm.to(decomiddle, { duration: 10, repeat: -1, translateX: -400, ease: 'power3.inOut', yoyo: true}, 0);
-tlm.from(decogrey, { duration: 8, repeat: -1, translateX: -600, ease: 'power4.inOut', yoyo: true}, 1);
-tlm.to(decoredtop, { duration: 7, repeat: -1, translateX: -550, ease: 'none', yoyo: true}, -.5);
-tlm.from(decoblue, { duration: 8, repeat: -1, translateX: -500, ease: 'power1.inOut', yoyo: true}, 1.5);
+// ...eliminada animación swirl decoration GSAP...
 
 
-// Gsap interactions intro anim
-const introLm = gsap.timeline({});
-const hero = document.querySelector('.heroText');
-const introLines = document.querySelector('.intro--wrapper h3');
-const introText = document.querySelector('.intro--wrapper h4');
-const mainNav = document.querySelector('.mainNav');
-
-if (window.matchMedia("(min-width: 48em)").matches) {
-  introLm.to(hero, { duration: 1, opacity: 1, translateY: 0, ease: 'power2.out' }, 0);
-  introLm.to(hero, { duration: 1.5, translateY: -50, ease: 'power2.out' }, "+=3.75");
-  introLm.to(introLines, { duration: 3, opacity: 1, ease: 'power2.out' }, "-=1");
-  introLm.to(introText, { duration: 2, opacity: 1, ease: 'power2.out' }, "-=2");
-  introLm.to(mainNav, { duration: 1, opacity: 1, ease: 'power2.out' }, "-=.5");
-  introLm.to(hero, { duration: 1, css: { borderColor: "#E5E5E5" }, ease: 'power2.out' }, "-=2");
-} else {
-  introLm.to(hero, { duration: 1, opacity: 1, translateY: 0, ease: 'power2.out' }, 0);
-  introLm.to(hero, { duration: 1.5, translateY: 0, ease: 'power2.out' }, "+=3.75");
-  introLm.to(introLines, { duration: 3, opacity: 1, ease: 'power2.out' }, "-=1");
-  introLm.to(introText, { duration: 2, opacity: 1, ease: 'power2.out' }, "-=2");
-  introLm.to(mainNav, { duration: 1, opacity: 1, ease: 'power2.out' }, "-=.5");
-  introLm.to(hero, { duration: 1, css: { borderColor: "#E5E5E5" }, ease: 'power2.out' }, "-=2");
-}
+// ...eliminada animación de intro GSAP...
 
 
