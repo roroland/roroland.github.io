@@ -1236,7 +1236,8 @@ a:focus::after, a:active::after {
   transform-style: preserve-3d;
   animation: showImg forwards;
   animation-timeline: view();
-  animation-range: entry 80% cover 100%;
+  --range-shift: 0%;
+  animation-range: entry calc(0% + var(--range-shift)) cover calc(20% + var(--range-shift));
 }
 @media only screen and (min-width: 48em) {
   .workGallery img {
@@ -1296,6 +1297,9 @@ a:focus::after, a:active::after {
   padding: 1rem;
   min-height: 100px;
   justify-items: center;
+}
+.workGallery .workGallery-items > img {
+  --range-shift: calc((sibling-index() - 1) / sibling-count() * 30%);
 }
 @media only screen and (min-width: 48em) {
   .workGallery .workGallery-items {
