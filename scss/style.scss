@@ -1,3 +1,8 @@
+// ---------------------------------------------
+// Archivo principal: style.scss
+// Importa abstracts y components, y define animaciones globales.
+// Incluye animaciones scroll-driven, intro, decoraciones y layout base.
+// ---------------------------------------------
 
 @use 'abstracts' as *;
 @use 'components' as *;
@@ -28,32 +33,47 @@
 	to   { opacity: 1; transform: scale(1) rotate(0) translateX(0); }
 }
 // 3. Animación de decoraciones principales (swirl)
+// --- Animación swirlMiddle ---
+// Aplica movimiento horizontal cíclico a la capa SVG con id "middle"
 @keyframes swirlMiddle {
 	0%   { transform: translateX(0); }
 	100% { transform: translateX(-400px); }
 }
 #middle {
+	// Animación de la capa central de decoración SVG
 	animation: swirlMiddle 10s ease-in-out infinite alternate;
 }
+
+// --- Animación swirlGrey ---
+// Aplica movimiento horizontal cíclico a la capa SVG con id "grey"
 @keyframes swirlGrey {
 	0%   { transform: translateX(0); }
 	100% { transform: translateX(-600px); }
 }
 #grey {
+	// Animación de la capa gris de decoración SVG
 	animation: swirlGrey 8s ease-in-out infinite alternate;
 }
+
+// --- Animación swirlRedTop ---
+// Aplica movimiento horizontal cíclico a la capa SVG con id "redtop"
 @keyframes swirlRedTop {
 	0%   { transform: translateX(0); }
 	100% { transform: translateX(-550px); }
 }
 #redtop {
+	// Animación de la capa roja superior de decoración SVG
 	animation: swirlRedTop 7s linear infinite alternate;
 }
+
+// --- Animación swirlBlue ---
+// Aplica movimiento horizontal cíclico a la capa SVG con id "blue"
 @keyframes swirlBlue {
 	0%   { transform: translateX(0); }
 	100% { transform: translateX(-500px); }
 }
 #blue {
+	// Animación de la capa azul de decoración SVG
 	animation: swirlBlue 8s ease-in-out infinite alternate;
 }
 

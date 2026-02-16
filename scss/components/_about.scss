@@ -1,3 +1,14 @@
+// ---------------------------------------------
+// Bloque principal: About
+// Contiene estilos para la sección de presentación personal.
+// Incluye layout, tipografía, y elementos visuales.
+// ---------------------------------------------
+// Layout general de la sección About
+// Estilos para el título y subtítulo
+// Estilos para la imagen de perfil
+// Estilos para el texto descriptivo
+// Estilos para enlaces y botones
+// Estilos para animaciones o efectos visuales (si aplica)
 @use '../abstracts/' as *;
 
 // Home
@@ -102,6 +113,11 @@
       grid-column: 1 / -1;
       width: 100%;
       height: 100%;
+      // --- Animación scroll-driven ---
+      // El bloque aparece desde la derecha hasta su posición final cuando entra en cover del viewport
+      animation: worldIn forwards;
+      animation-timeline: view();
+      animation-range: entry 0% cover 80%;
       @media only screen and (min-width: 48em){
         padding: 1rem $component-space-small;
         grid-column: 4 / -1;
@@ -109,6 +125,21 @@
       h3{
         color: $dark;
         opacity: .75;
+        // --- Keyframes para animación scroll-driven de .world--container ---
+        @keyframes worldIn {
+          0% {
+            opacity: 0;
+            transform: translateX(120px);
+          }
+          50%, 90% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+          100% {
+            opacity: 0;
+            transform: translateX(120px);
+          }
+        }
         font-size: 2.25rem;
         writing-mode: tb;
         text-align: center;
