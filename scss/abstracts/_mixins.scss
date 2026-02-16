@@ -1,0 +1,6 @@
+// --- Mixins y utilidades para unidades relativas ---
+// Uso: rel(50px) => 3.125rem
+
+@function rel($px) {
+  @return ($px / 16px) * 1rem;
+}
