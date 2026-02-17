@@ -823,6 +823,7 @@ a:focus::after, a:active::after {
   grid-column: 1/-1;
   grid-template-columns: repeat(6, 1fr);
   column-gap: 1.5rem;
+  overflow-x: clip;
   padding: 0 0 1.5rem 0;
 }
 @media only screen and (min-width: 90em) {
@@ -896,11 +897,9 @@ a:focus::after, a:active::after {
   grid-column: 1/-1;
   width: 100%;
   height: 100%;
-  transition-behavior: allow-discrete;
-  animation-name: worldIn, worldDisplay;
-  animation-fill-mode: forwards, both;
-  animation-timeline: view(), view();
-  animation-range: entry 0% cover 80%, entry 0% cover 80%;
+  animation: worldIn forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 80%;
 }
 @starting-style {
   .about .aboutSummary .world--container {
@@ -933,17 +932,6 @@ a:focus::after, a:active::after {
   100% {
     opacity: 0;
     transform: translateX(7.5rem);
-  }
-}
-@keyframes worldDisplay {
-  0% {
-    display: none;
-  }
-  0.1%, 99.9% {
-    display: flex;
-  }
-  100% {
-    display: none;
   }
 }
 .about .aboutSummary .world--container ul {
