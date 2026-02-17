@@ -52,7 +52,7 @@
       margin: $component-space auto 0;
       @media only screen and (min-width: 48em){
         grid-template-columns: 1fr repeat(5, 7.5em) 1fr;
-        grid-template-rows: min-content minmax(150px, max-content) min-content;
+        grid-template-rows: min-content minmax(#{rel(150px)}, max-content) min-content;
       }
     }
     [class^='item-']{
@@ -67,7 +67,7 @@
         display: flex;
         align-items: center;
         flex-flow: column nowrap;
-        min-height: 60px;
+        min-height: #{rel(60px)};
         text-decoration: none;
         position: relative;
         width: 100%;
@@ -87,7 +87,7 @@
           top: -$component-space-small;
         }
         .img-item{
-          filter: blur(2px);
+          filter: blur(#{rel(2px)});
           opacity: .15;
           transform: translateY(-$component-space-small);
         }
@@ -96,7 +96,7 @@
         }
       }
       .img-item{
-        height: 60px;
+        height: #{rel(60px)};
         filter: blur(0);
         transform: translateY(0);
         transition: 1s all ease-out;
@@ -105,7 +105,7 @@
       .img-mask{
         display: block;
         width: 100%;
-        height: 60px;
+        height: #{rel(60px)};
         background: url('../images/feature-mask.png') no-repeat center;
         background-size: contain;
         position: relative;
@@ -133,7 +133,7 @@
         grid-column: 3 / 4;
       }
       .img-item{
-        max-width: 75px;
+        max-width: #{rel(75px)};
       }
     }
     .item-music{

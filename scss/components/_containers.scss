@@ -27,8 +27,8 @@
     z-index: 0;
 
     @media only screen and (max-width: 48em) {
-      --deco-width: 1236px;
-      min-height: 320px;
+      --deco-width: #{rel(1236px)};
+      min-height: #{rel(320px)};
       width: var(--deco-width);
     }
     #middle{
@@ -68,8 +68,8 @@
       background-size: cover;
       position: absolute;
       width: 100%;
-      min-height: 50px;
-      bottom: -1px;
+      min-height: #{rel(50px)};
+      bottom: -#{rel(1px)};
       left: 0;
       z-index: 1;
     }

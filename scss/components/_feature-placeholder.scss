@@ -29,7 +29,7 @@
     min-height: 80vh;
   }
   &.is-active span {
-    perspective: 1000px;
+    perspective: #{rel(1000px)};
     perspective-origin: center center;
     @for $i from 1 to 17 {
       &:nth-child(#{$i}) {
@@ -87,7 +87,7 @@
     content: '';
     pointer-events: none;
     background: rgba(var(--darkred-a), .35);
-    backdrop-filter: saturate(70%) blur(2px);
+    backdrop-filter: saturate(70%) blur(#{rel(2px)});
     border-radius: 50%;
     position: absolute;
     transition: all .3s ease-out;
@@ -105,11 +105,11 @@
     color: #fff;
     left: 0;
     transform: translate(-50% -50%);
-    text-shadow: 0 2px $darkred;
+    text-shadow: 0 #{rel(2px)} $darkred;
     text-align: center;
     top: 50%;
     width: 100%;
-    height: 200px;
+    height: #{rel(200px)};
     z-index: 10;
   }
   &:hover{

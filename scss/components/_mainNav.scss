@@ -7,8 +7,8 @@
 
 .mainNav{
   background-color: rgba(var(--lightest-a), .75);
-  border-bottom: 1px solid rgba(var(--light-a), .85);
-  backdrop-filter: blur(2px);
+  border-bottom: #{rel(1px)} solid rgba(var(--light-a), .85);
+  backdrop-filter: blur(#{rel(2px)});
   display: flex;
   flex-flow: row wrap;
   padding: $component-space-tiny/2 0;
@@ -38,7 +38,7 @@
   }
   &.is-top{
     background-color: rgba(var(--lightest-a), .85);
-    border-bottom: 1px solid $light;
+    border-bottom: #{rel(1px)} solid $light;
     border-top: 0;
     max-width: 100%;
     padding: $component-space-small 0;

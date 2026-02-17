@@ -90,7 +90,7 @@
     @keyframes introAboutIn {
       from {
         opacity: 0;
-        transform: translateX(-220px);
+        transform: translateX(-#{rel(220px)});
       }
       to {
         opacity: 1;
@@ -145,7 +145,7 @@
         @keyframes worldIn {
           0% {
             opacity: 0;
-            transform: translateX(120px);
+            transform: translateX(#{rel(120px)});
           }
           50%, 90% {
             opacity: 1;
@@ -153,7 +153,7 @@
           }
           100% {
             opacity: 0;
-            transform: translateX(120px);
+            transform: translateX(#{rel(120px)});
           }
         }
         font-size: 2.25rem;
@@ -215,7 +215,7 @@
       }
       li{
         margin-bottom: $component-space;
-        perspective: 1000px;
+        perspective: #{rel(1000px)};
         opacity: 0;
         h4{
           margin-left: $component-space;
@@ -228,7 +228,7 @@
             animation-duration: 1.5s;
             animation-fill-mode: forwards;
             p{
-              border-right: 2px solid rgba(var(--darkred-a), calc(.15 * #{$i}));
+              border-right: #{rel(2px)} solid rgba(var(--darkred-a), calc(.15 * #{$i}));
             }
           }
         }

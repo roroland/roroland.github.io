@@ -26,7 +26,7 @@
     grid-row: 2 /3;
     height: 100%;
     overflow: hidden;
-    max-height: 3000px;
+    max-height: #{rel(3000px)};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +36,7 @@
       background-size: 160%;
     }
     @media only screen and (min-width: 64em){
-      max-height: 1000px;
+      max-height: #{rel(1000px)};
     }
     &.show-layout {
       .contentItem-layout {
@@ -127,8 +127,8 @@
     opacity: 0;
     animation: frameItem .5s ease-out 1s forwards;
     background: $accent;
-    border-top: 2px solid rgba(var(--dark-a), .025);
-    border-bottom: 2px solid rgba(var(--dark-a), .025);
+    border-top: #{rel(2px)} solid rgba(var(--dark-a), .025);
+    border-bottom: #{rel(2px)} solid rgba(var(--dark-a), .025);
     position: relative;
     will-change: opacity, scroll-position;
     &::before{
@@ -136,10 +136,10 @@
       position: absolute;
       width: 50%;
       margin: 0 auto;
-      height: 1px;
+      height: #{rel(1px)};
       transform: translateX(50%);
-      top: -2px;
-      box-shadow: 0 7px 40px 1px rgba(var(--dark-a), .5);
+      top: -#{rel(2px)};
+      box-shadow: 0 #{rel(7px)} #{rel(40px)} #{rel(1px)} rgba(var(--dark-a), .5);
       z-index: 1;
     }
     > ul{

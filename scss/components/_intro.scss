@@ -31,7 +31,7 @@
   }
 
   .heroText{
-    border-radius: 5px;
+    border-radius: #{rel(5px)};
     border: 1pt solid transparent;
     padding: $component-space-tiny $component-space;
     display: block;

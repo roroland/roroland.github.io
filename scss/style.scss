@@ -10,7 +10,7 @@
 
 // 1. Animación de entrada de bloques UI
 @keyframes fadeInUp {
-	from { opacity: 0; transform: translateY(40px); }
+	from { opacity: 0; transform: translateY(#{rel(40px)}); }
 	to   { opacity: 1; transform: translateY(0); }
 }
 .animatable {
@@ -29,7 +29,7 @@
 
 // 2. Animación de países (stagger con nth-child)
 @keyframes countryIn {
-	from { opacity: 0; transform: scale(0.25) rotate(20deg) translateX(100px); }
+	from { opacity: 0; transform: scale(0.25) rotate(20deg) translateX(#{rel(100px)}); }
 	to   { opacity: 1; transform: scale(1) rotate(0) translateX(0); }
 }
 // 3. Animación de decoraciones principales (swirl)
@@ -37,7 +37,7 @@
 // Aplica movimiento horizontal cíclico a la capa SVG con id "middle"
 @keyframes swirlMiddle {
 	0%   { transform: translateX(0); }
-	100% { transform: translateX(-400px); }
+	100% { transform: translateX(-#{rel(400px)}); }
 }
 #middle {
 	// Animación de la capa central de decoración SVG
@@ -48,7 +48,7 @@
 // Aplica movimiento horizontal cíclico a la capa SVG con id "grey"
 @keyframes swirlGrey {
 	0%   { transform: translateX(0); }
-	100% { transform: translateX(-600px); }
+	100% { transform: translateX(-#{rel(600px)}); }
 }
 #grey {
 	// Animación de la capa gris de decoración SVG
@@ -59,7 +59,7 @@
 // Aplica movimiento horizontal cíclico a la capa SVG con id "redtop"
 @keyframes swirlRedTop {
 	0%   { transform: translateX(0); }
-	100% { transform: translateX(-550px); }
+	100% { transform: translateX(-#{rel(550px)}); }
 }
 #redtop {
 	// Animación de la capa roja superior de decoración SVG
@@ -70,7 +70,7 @@
 // Aplica movimiento horizontal cíclico a la capa SVG con id "blue"
 @keyframes swirlBlue {
 	0%   { transform: translateX(0); }
-	100% { transform: translateX(-500px); }
+	100% { transform: translateX(-#{rel(500px)}); }
 }
 #blue {
 	// Animación de la capa azul de decoración SVG
@@ -85,13 +85,13 @@
 	z-index: 10;
 }
 body:has(.mainNav.is-top) .mainNav {
-	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	box-shadow: 0 #{rel(2px)} #{rel(8px)} rgba(0,0,0,0.1);
 	opacity: 0.95;
 }
 
 // 5. Animación de intro secuencial
 @keyframes introHero {
-	from { opacity: 0; transform: translateY(40px); }
+	from { opacity: 0; transform: translateY(#{rel(40px)}); }
 	to   { opacity: 1; transform: translateY(0); }
 }
 .heroText {
