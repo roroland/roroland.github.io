@@ -55,15 +55,11 @@
     path {
       stroke-dasharray: 100;
       stroke-dashoffset: 100;
-      @for $i from 1 to 36 {
-        &:nth-child(#{$i}) {
-          animation-delay: $i * .12s;
-          animation-name: dash;
-          animation-timing-function: ease-in;
-          animation-duration: .6s;
-          animation-fill-mode: forwards;
-        }
-      }
+      animation-name: dash;
+      animation-delay: calc(sibling-index() * 0.12s);
+      animation-timing-function: ease-in;
+      animation-duration: .6s;
+      animation-fill-mode: forwards;
     }
   }
   @keyframes colorBg {

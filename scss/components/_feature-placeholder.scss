@@ -31,15 +31,11 @@
   &.is-active span {
     perspective: #{rel(1000px)};
     perspective-origin: center center;
-    @for $i from 1 to 17 {
-      &:nth-child(#{$i}) {
-        animation-delay: $i * .065s;
-        animation-name: flip;
-        animation-timing-function: cubic-bezier(.02, .53, .62, 1.21);
-        animation-duration: 1s;
-        animation-fill-mode: forwards;
-      }
-    }
+    animation-name: flip;
+    animation-delay: calc(sibling-index() * 0.065s);
+    animation-timing-function: cubic-bezier(.02, .53, .62, 1.21);
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
   }
   
   span {
