@@ -990,79 +990,14 @@ a:focus::after, a:active::after {
   margin-bottom: 1.5rem;
   perspective: 62.5rem;
   opacity: 0;
+  animation-name: card;
+  animation-delay: calc(sibling-index() * 0.25s);
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(1, -0.41, -0.85, 1.25);
+  animation-fill-mode: forwards;
 }
 .about .aboutSummary .timeline li h4 {
   margin-left: 1.5rem;
-}
-.about .aboutSummary .timeline li:nth-child(1) {
-  animation-delay: 0.25s;
-  animation-name: card;
-  animation-timing-function: cubic-bezier(1, -0.41, -0.85, 1.25);
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
-}
-.about .aboutSummary .timeline li:nth-child(1) p {
-  border-right: 0.125rem solid rgba(var(--darkred-a), calc(.15 * 1));
-}
-.about .aboutSummary .timeline li:nth-child(2) {
-  animation-delay: 0.5s;
-  animation-name: card;
-  animation-timing-function: cubic-bezier(1, -0.41, -0.85, 1.25);
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
-}
-.about .aboutSummary .timeline li:nth-child(2) p {
-  border-right: 0.125rem solid rgba(var(--darkred-a), calc(.15 * 2));
-}
-.about .aboutSummary .timeline li:nth-child(3) {
-  animation-delay: 0.75s;
-  animation-name: card;
-  animation-timing-function: cubic-bezier(1, -0.41, -0.85, 1.25);
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
-}
-.about .aboutSummary .timeline li:nth-child(3) p {
-  border-right: 0.125rem solid rgba(var(--darkred-a), calc(.15 * 3));
-}
-.about .aboutSummary .timeline li:nth-child(4) {
-  animation-delay: 1s;
-  animation-name: card;
-  animation-timing-function: cubic-bezier(1, -0.41, -0.85, 1.25);
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
-}
-.about .aboutSummary .timeline li:nth-child(4) p {
-  border-right: 0.125rem solid rgba(var(--darkred-a), calc(.15 * 4));
-}
-.about .aboutSummary .timeline li:nth-child(5) {
-  animation-delay: 1.25s;
-  animation-name: card;
-  animation-timing-function: cubic-bezier(1, -0.41, -0.85, 1.25);
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
-}
-.about .aboutSummary .timeline li:nth-child(5) p {
-  border-right: 0.125rem solid rgba(var(--darkred-a), calc(.15 * 5));
-}
-.about .aboutSummary .timeline li:nth-child(6) {
-  animation-delay: 1.5s;
-  animation-name: card;
-  animation-timing-function: cubic-bezier(1, -0.41, -0.85, 1.25);
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
-}
-.about .aboutSummary .timeline li:nth-child(6) p {
-  border-right: 0.125rem solid rgba(var(--darkred-a), calc(.15 * 6));
-}
-.about .aboutSummary .timeline li:nth-child(7) {
-  animation-delay: 1.75s;
-  animation-name: card;
-  animation-timing-function: cubic-bezier(1, -0.41, -0.85, 1.25);
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
-}
-.about .aboutSummary .timeline li:nth-child(7) p {
-  border-right: 0.125rem solid rgba(var(--darkred-a), calc(.15 * 7));
 }
 .about .aboutSummary .timeline li p:first-child {
   border-right: 0;

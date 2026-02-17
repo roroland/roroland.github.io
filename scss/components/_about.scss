@@ -225,18 +225,11 @@
         h4{
           margin-left: $component-space;
         }
-        @for $i from 1 to 8 {
-          &:nth-child(#{$i}) {
-            animation-delay: $i * .25s;
-            animation-name: card;
-            animation-timing-function: cubic-bezier(1,-.41,-.85, 1.25);
-            animation-duration: 1.5s;
-            animation-fill-mode: forwards;
-            p{
-              border-right: #{rel(2px)} solid rgba(var(--darkred-a), calc(.15 * #{$i}));
-            }
-          }
-        }
+        animation-name: card;
+        animation-delay: calc(sibling-index() * 0.25s);
+        animation-duration: 1.5s;
+        animation-timing-function: cubic-bezier(1,-.41,-.85, 1.25);
+        animation-fill-mode: forwards;
         p:first-child{
           border-right: 0;
         }
