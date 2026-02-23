@@ -450,10 +450,10 @@ a:focus::after, a:active::after {
 
 @keyframes mainNavIntro {
   from {
-    opacity: 0;
+    transform: translateY(-1.5rem);
   }
   to {
-    opacity: 1;
+    transform: translateY(0);
   }
 }
 @keyframes mainNavScroll {
@@ -471,18 +471,8 @@ a:focus::after, a:active::after {
     border-radius: 1.875rem;
     box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
     padding: 1rem 0;
-    max-width: 50%;
-    top: 0.5rem;
-  }
-}
-@keyframes narrowNav {
-  from {
-    flex: 1;
-    max-width: 50%;
-  }
-  to {
-    flex: 1;
-    max-width: 100%;
+    max-width: var(--maxNavWidth);
+    top: 0.25rem;
   }
 }
 .mainNav {
@@ -493,14 +483,15 @@ a:focus::after, a:active::after {
   display: flex;
   flex-flow: row wrap;
   padding: 0.25rem 0;
-  opacity: 0;
+  opacity: 1;
   position: sticky;
   top: 0;
+  transform: translateY(-1.5rem);
   margin: 0 auto;
   max-width: 100%;
   justify-content: center;
   animation: mainNavIntro 1s 3.5s ease-out forwards;
-  transition: height 0.125s ease-in-out, color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  transition: height 0.125s ease-in-out, color 0.5s ease-in-out, background-color 0.5s ease-in-out, opacity 0.2s ease-in-out;
   z-index: 999;
 }
 .mainNav ul {
@@ -532,23 +523,15 @@ a:focus::after, a:active::after {
 
 @supports (animation-timeline: scroll()) {
   .mainNav {
-    animation-name: mainNavIntro, mainNavScroll;
-    animation-duration: 1s, auto;
-    animation-delay: 3.5s, 0s;
-    animation-timing-function: ease-out, linear;
-    animation-fill-mode: forwards, both;
+    --maxNavWidth: 100%;
+    animation: mainNavIntro 1s 3.5s ease-out forwards, mainNavScroll linear both;
     animation-timeline: auto, scroll();
     animation-range: normal, 0% 8%;
   }
-}
-@supports (animation-timeline: scroll()) {
-  .mainNav ul {
-    animation-name: narrowNav;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-    animation-timeline: scroll();
-    animation-range: 0% 8%;
+  @media only screen and (min-width: 48em) {
+    .mainNav {
+      --maxNavWidth: 50%;
+    }
   }
 }
 @media only screen and (max-width: 48em) {

@@ -7,8 +7,8 @@
 
 // Intro del menú (entra desde arriba)
 @keyframes mainNavIntro{
-  from{ opacity: 0;}
-  to{ opacity: 1;}
+  from{ transform: translateY(#{rel(-24px)}); }
+  to{ transform: translateY(0); }
 }
 
 // Scroll-driven: transición de estilos al 8% del scroll
@@ -27,21 +27,10 @@
     border-radius: #{rel(30px)};
     box-shadow: 0 #{rel(2px)} #{rel(8px)} rgba(0,0,0,0.1);
     padding: $component-space-small 0;
-    max-width: 50%;
-    top: $component-space-tiny;
+    max-width: var(--maxNavWidth);
+    top: #{rel(4px)};
   }
 }
-@keyframes narrowNav{
-  from{
-    flex: 1;
-    max-width: 50%;
-  }
-  to{
-    flex: 1;
-    max-width: 100%;
-  }
-}
-
 .mainNav{
   background-color: rgba(var(--lightest-a), .75);
   border-bottom: #{rel(1px)} solid rgba(var(--light-a), .85);
@@ -50,14 +39,15 @@
   display: flex;
   flex-flow: row wrap;
   padding: $component-space-tiny/2 0;
-  opacity: 0;
+  opacity: 1;
   position: sticky;
   top: 0;
+  transform: translateY(#{rel(-24px)});
   margin: 0 auto;
   max-width: 100%;
   justify-content: center;
   animation: mainNavIntro 1s 3.5s ease-out forwards;
-  transition: height .125s ease-in-out, color .5s ease-in-out, background-color .5s ease-in-out;
+  transition: height .125s ease-in-out, color .5s ease-in-out, background-color .5s ease-in-out, opacity .2s ease-in-out;
   z-index: 999;
   ul{
     display: flex;
@@ -94,22 +84,12 @@
 
 @supports (animation-timeline: scroll()){
   .mainNav{
-    animation-name: mainNavIntro, mainNavScroll;
-    animation-duration: 1s, auto;
-    animation-delay: 3.5s, 0s;
-    animation-timing-function: ease-out, linear;
-    animation-fill-mode: forwards, both;
+    --maxNavWidth: 100%;
+    animation: mainNavIntro 1s 3.5s ease-out forwards, mainNavScroll linear both;
     animation-timeline: auto, scroll();
     animation-range: normal, 0% 8%;
-  }
-}
-@supports (animation-timeline: scroll()){
-  .mainNav ul{
-    animation-name: narrowNav;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-    animation-timeline: scroll();
-    animation-range: 0% 8%;
+    @media only screen and (min-width: 48em){
+      --maxNavWidth: 50%;
+    }
   }
 }
