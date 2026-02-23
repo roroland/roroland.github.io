@@ -27,9 +27,8 @@
     z-index: 0;
 
     @media only screen and (max-width: 48em) {
-      --deco-width: #{rel(1236px)};
-      min-height: #{rel(320px)};
-      width: var(--deco-width);
+      min-height: #{rel(120px)};
+      max-width: 100%;
     }
     #middle{
       transform-origin: center;
@@ -42,7 +41,7 @@
     justify-content: space-between;
     padding: 0;
     @media only screen and (max-width: 47.99em){
-      min-height: 60vh;
+      min-height: calc(100vh - #{rel(80px)});
     }
     @media only screen and (max-width: 47.99em) and (orientation: landscape){
       min-height: 82vh;

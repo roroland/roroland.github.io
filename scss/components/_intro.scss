@@ -17,6 +17,7 @@
   width: 100%;
   @media only screen and (min-width: 48em){
     flex-flow: column nowrap;
+    gap: calc(#{$component-space} * 2);
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -28,6 +29,7 @@
     color: currentColor;
     display: block;
     text-decoration: none;
+    flex: 0 1 100%;
   }
 
   .heroText{
@@ -37,7 +39,7 @@
     display: block;
     position: relative;
     z-index: 99999;
-    max-width: 30rem;
+    max-width: min(60vw, 45rem);
     transition: top .25s ease-in-out;
     z-index: 20;
     width: 100%;
