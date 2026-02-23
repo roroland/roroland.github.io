@@ -470,7 +470,7 @@ a:focus::after, a:active::after {
     border-bottom: 0.0625rem solid #E5E5E5;
     border-radius: 1.875rem;
     box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     max-width: var(--maxNavWidth);
     top: 0.25rem;
   }
