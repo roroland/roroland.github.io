@@ -448,9 +448,47 @@ a:focus::after, a:active::after {
   }
 }
 
+@keyframes mainNavIntro {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes mainNavScroll {
+  0% {
+    background-color: rgba(var(--lightest-a), 0.75);
+    border-bottom: 0.0625rem solid rgba(var(--light-a), 0.85);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    padding: 0.25rem 0;
+    position: sticky;
+    top: 0;
+  }
+  100% {
+    background-color: rgba(var(--lightest-a), 0.85);
+    border-bottom: 0.0625rem solid #E5E5E5;
+    border-radius: 1.875rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    max-width: 50%;
+    top: 0.5rem;
+  }
+}
+@keyframes narrowNav {
+  from {
+    flex: 1;
+    max-width: 50%;
+  }
+  to {
+    flex: 1;
+    max-width: 100%;
+  }
+}
 .mainNav {
   background-color: rgba(var(--lightest-a), 0.75);
   border-bottom: 0.0625rem solid rgba(var(--light-a), 0.85);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   backdrop-filter: blur(0.125rem);
   display: flex;
   flex-flow: row wrap;
@@ -458,63 +496,29 @@ a:focus::after, a:active::after {
   opacity: 0;
   position: sticky;
   top: 0;
+  margin: 0 auto;
   max-width: 100%;
   justify-content: center;
+  animation: mainNavIntro 1s 3.5s ease-out forwards;
   transition: height 0.125s ease-in-out, color 0.5s ease-in-out, background-color 0.5s ease-in-out;
   z-index: 999;
 }
 .mainNav ul {
   display: flex;
-  flex: 0 88%;
+  flex: 1;
   list-style: none;
   justify-content: space-between;
   transition: flex 0.25s linear;
-}
-@media only screen and (min-width: 48em) {
-  .mainNav ul {
-    flex: 0 1 40%;
-  }
+  max-width: 55%;
 }
 .mainNav ul li {
   font-size: 0.75rem;
+  text-align: center;
+  flex: 1 auto;
 }
 .mainNav ul a {
   color: rgba(var(--dark-a), 0.75);
   text-decoration: none;
-}
-.mainNav.is-top {
-  background-color: rgba(var(--lightest-a), 0.85);
-  border-bottom: 0.0625rem solid #E5E5E5;
-  border-top: 0;
-  max-width: 100%;
-  padding: 1rem 0;
-  width: 100%;
-  top: 0;
-}
-.mainNav.is-top ul {
-  flex: 0 1 90%;
-}
-.mainNav.is-top ul li {
-  font-size: 0.8rem;
-}
-@media only screen and (min-width: 48em) {
-  .mainNav.is-top ul li {
-    font-size: 0.9rem;
-  }
-}
-@media only screen and (min-width: 64em) {
-  .mainNav.is-top ul {
-    flex: 0 1 50%;
-  }
-}
-.mainNav.is-top ul a {
-  color: #9CB0BE;
-  padding: 0.5rem;
-}
-@media only screen and (min-width: 48em) {
-  .mainNav.is-top ul a {
-    padding: 1.5rem;
-  }
 }
 .mainNav:hover {
   background-color: rgba(var(--lightest), 0.85);
@@ -526,6 +530,27 @@ a:focus::after, a:active::after {
   color: #b9506e;
 }
 
+@supports (animation-timeline: scroll()) {
+  .mainNav {
+    animation-name: mainNavIntro, mainNavScroll;
+    animation-duration: 1s, auto;
+    animation-delay: 3.5s, 0s;
+    animation-timing-function: ease-out, linear;
+    animation-fill-mode: forwards, both;
+    animation-timeline: auto, scroll();
+    animation-range: normal, 0% 8%;
+  }
+}
+@supports (animation-timeline: scroll()) {
+  .mainNav ul {
+    animation-name: narrowNav;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-timeline: scroll();
+    animation-range: 0% 8%;
+  }
+}
 @media only screen and (max-width: 48em) {
   .about {
     padding: 0;
@@ -1598,18 +1623,6 @@ footer p a {
   animation: swirlBlue 8s ease-in-out infinite alternate;
 }
 
-.mainNav {
-  position: sticky;
-  top: 0;
-  transition: box-shadow 0.3s, opacity 0.3s;
-  z-index: 10;
-}
-
-body:has(.mainNav.is-top) .mainNav {
-  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
-  opacity: 0.95;
-}
-
 @keyframes introHero {
   from {
     opacity: 0;
@@ -1633,11 +1646,6 @@ body:has(.mainNav.is-top) .mainNav {
 .intro--wrapper h4 {
   opacity: 0;
   animation: introHero 1s 2.5s ease-out forwards;
-}
-
-.mainNav {
-  opacity: 0;
-  animation: introHero 1s 3.5s ease-out forwards;
 }
 
 @keyframes borderColorFade {

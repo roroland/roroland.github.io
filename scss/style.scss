@@ -77,18 +77,6 @@
 	animation: swirlBlue 8s ease-in-out infinite alternate;
 }
 
-// 4. Menú sticky simplificado
-.mainNav {
-	position: sticky;
-	top: 0;
-	transition: box-shadow 0.3s, opacity 0.3s;
-	z-index: 10;
-}
-body:has(.mainNav.is-top) .mainNav {
-	box-shadow: 0 #{rel(2px)} #{rel(8px)} rgba(0,0,0,0.1);
-	opacity: 0.95;
-}
-
 // 5. Animación de intro secuencial
 @keyframes introHero {
 	from { opacity: 0; transform: translateY(#{rel(40px)}); }
@@ -106,10 +94,6 @@ body:has(.mainNav.is-top) .mainNav {
 	opacity: 0;
 	animation: introHero 1s 2.5s ease-out forwards;
 }
-.mainNav {
-	opacity: 0;
-	animation: introHero 1s 3.5s ease-out forwards;
-}
 // Border animación opcional
 @keyframes borderColorFade {
 	from { border-color: transparent; }
@@ -119,7 +103,6 @@ body:has(.mainNav.is-top) .mainNav {
 	border: 2px solid transparent;
 	animation: borderColorFade 1s 2.5s ease-out forwards, introHero 1s 0s ease-out forwards;
 }
-
 
 
 
