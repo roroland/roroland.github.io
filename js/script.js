@@ -40,52 +40,7 @@ root.style.setProperty('--ypos', 350);
 
 function getFeature(itemNavId) {
   const closeLink = document.querySelector('.close');
-  if (itemNavId === 'layout') {
-    fetch('./content/layout.html')
-    .then(function (response) {
-      return response.text();
-    })
-    .then(function (data) {
-      document.getElementById('templateLayout').innerHTML = data;
-      featureUI(itemNavId, closeLink);
-    })
-  } else if (itemNavId === 'rwd') {
-    fetch('./content/rwd.html')
-    .then(function (response) {
-      return response.text();
-    })
-    .then(function (data) {
-      document.getElementById('templateRwd').innerHTML = data;
-      featureUI(itemNavId, closeLink);
-    })
-  } else if (itemNavId === 'css') {
-    fetch('./content/css.html')
-    .then(function (response) {
-      return response.text();
-    })
-    .then(function (data) {
-      document.getElementById('templateCss').innerHTML = data;
-      featureUI(itemNavId, closeLink);
-    })
-  } else if (itemNavId === 'music') {
-    fetch('./content/music.html')
-    .then(function (response) {
-      return response.text();
-    })
-    .then(function (data) {
-      document.getElementById('templateMusic').innerHTML = data;
-      featureUI(itemNavId, closeLink);
-    })
-  } else if (itemNavId === 'ui') {
-    fetch('./content/ui.html')
-    .then(function (response) {
-      return response.text();
-    })
-    .then(function (data) {
-      document.getElementById('templateUi').innerHTML = data;
-      featureUI(itemNavId, closeLink);
-    })
-  }
+  featureUI(itemNavId, closeLink);
 }
 
 let featureUI = function (itemNavId, closeLink) {
