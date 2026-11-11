@@ -10,100 +10,136 @@
 
 // 1. Animación de entrada de bloques UI
 @keyframes fadeInUp {
-	from { opacity: 0; transform: translateY(#{rel(40px)}); }
-	to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(#{rel(40px)});
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .animatable {
-	opacity: 0;
-	animation: fadeInUp forwards;
-	animation-timeline: view();
-	animation-range: entry 0% cover 40%;
+  opacity: 0;
+  animation: fadeInUp forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 .world--container ul li {
-	opacity: 0;
-	animation: countryIn forwards;
-	animation-timeline: view();
-	animation-range: entry 0% cover 40%;
+  opacity: 0;
+  animation: countryIn forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 // 2. Animación de países (stagger con nth-child)
 @keyframes countryIn {
-	from { opacity: 0; transform: scale(0.25) rotate(20deg) translateX(#{rel(100px)}); }
-	to   { opacity: 1; transform: scale(1) rotate(0) translateX(0); }
+  from {
+    opacity: 0;
+    transform: scale(0.25) rotate(20deg) translateX(#{rel(100px)});
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0) translateX(0);
+  }
 }
 // 3. Animación de decoraciones principales (swirl)
 // --- Animación swirlMiddle ---
 // Aplica movimiento horizontal cíclico a la capa SVG con id "middle"
 @keyframes swirlMiddle {
-	0%   { transform: translateX(0); }
-	100% { transform: translateX(-#{rel(400px)}); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-#{rel(400px)});
+  }
 }
 #middle {
-	// Animación de la capa central de decoración SVG
-	animation: swirlMiddle 10s ease-in-out infinite alternate;
+  // Animación de la capa central de decoración SVG
+  animation: swirlMiddle 10s ease-in-out infinite alternate;
 }
 
 // --- Animación swirlGrey ---
 // Aplica movimiento horizontal cíclico a la capa SVG con id "grey"
 @keyframes swirlGrey {
-	0%   { transform: translateX(0); }
-	100% { transform: translateX(-#{rel(600px)}); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-#{rel(600px)});
+  }
 }
 #grey {
-	// Animación de la capa gris de decoración SVG
-	animation: swirlGrey 8s ease-in-out infinite alternate;
+  // Animación de la capa gris de decoración SVG
+  animation: swirlGrey 8s ease-in-out infinite alternate;
 }
 
 // --- Animación swirlRedTop ---
 // Aplica movimiento horizontal cíclico a la capa SVG con id "redtop"
 @keyframes swirlRedTop {
-	0%   { transform: translateX(0); }
-	100% { transform: translateX(-#{rel(550px)}); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-#{rel(550px)});
+  }
 }
 #redtop {
-	// Animación de la capa roja superior de decoración SVG
-	animation: swirlRedTop 7s linear infinite alternate;
+  // Animación de la capa roja superior de decoración SVG
+  animation: swirlRedTop 7s linear infinite alternate;
 }
 
 // --- Animación swirlBlue ---
 // Aplica movimiento horizontal cíclico a la capa SVG con id "blue"
 @keyframes swirlBlue {
-	0%   { transform: translateX(0); }
-	100% { transform: translateX(-#{rel(500px)}); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-#{rel(500px)});
+  }
 }
 #blue {
-	// Animación de la capa azul de decoración SVG
-	animation: swirlBlue 8s ease-in-out infinite alternate;
+  // Animación de la capa azul de decoración SVG
+  animation: swirlBlue 8s ease-in-out infinite alternate;
 }
 
 // 5. Animación de intro secuencial
 @keyframes introHero {
-	from { opacity: 0; transform: translateY(#{rel(40px)}); }
-	to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(#{rel(40px)});
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .heroText {
-	opacity: 0;
-	animation: introHero 1s 0s ease-out forwards;
+  opacity: 0;
+  animation: introHero 1s 0s ease-out forwards;
 }
 .intro--wrapper h3 {
-	opacity: 0;
-	animation: introHero 1s 1.5s ease-out forwards;
+  opacity: 0;
+  animation: introHero 1s 1.5s ease-out forwards;
 }
 .intro--wrapper h4 {
-	opacity: 0;
-	animation: introHero 1s 2.5s ease-out forwards;
+  opacity: 0;
+  animation: introHero 1s 2.5s ease-out forwards;
 }
 // Border animación opcional
 @keyframes borderColorFade {
-	from { border-color: transparent; }
-	to   { border-color: #E5E5E5; }
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: #e5e5e5;
+  }
 }
 .heroText {
-	border: 2px solid transparent;
-	animation: borderColorFade 1s 2.5s ease-out forwards, introHero 1s 0s ease-out forwards;
+  border: 2px solid transparent;
+  animation:
+    borderColorFade 1s 2.5s ease-out forwards,
+    introHero 1s 0s ease-out forwards;
 }
-
-
-
-

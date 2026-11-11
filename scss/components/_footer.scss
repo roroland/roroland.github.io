@@ -21,7 +21,7 @@ footer{
   }
   p{
     @extend .h4;
-    background: rgba(var(--dark-a), .75);
+    background: var(--dark-a);
     margin: $component-space*2 0 $component-space-small;
     flex: 1 50%;
     font-weight: 300;
@@ -33,7 +33,7 @@ footer{
       padding: $component-space;
     }
     a{
-      color: $blue;
+      color: var(--blue);
     }
   }
 }

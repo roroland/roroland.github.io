@@ -1,31 +1,43 @@
-@function hex2rgb($hex){
-  @return red($hex), green($hex), blue($hex);
-};
+/* Color palette defined with native CSS variables using rgb() and alpha variants via color-mix */
 
-$lightest: #F7F9F9;
-$light: #E5E5E5;
-$pale: #bdbdbd;
-$dark: #505050;
-$accent: #ea507c;
-$darkred: #b9506e;
-$blue: #9CB0BE;
-$darkblue: #52768d;
+:root {
+  /* Lightest shade */
+  --lightest: rgb(247, 249, 249);
+  /* Lightest shade with 50% alpha */
+  --lightest-a: color-mix(in srgb, rgb(247 249 249) 50%, transparent);
 
-:root{
-  --lightest: #{$lightest};
-  --lightest-a: #{hex2rgb($lightest)};
-  --light: #{$light};
-  --light-a: #{hex2rgb($light)};
-  --pale:  #{$pale};
-  --pale-a:  #{hex2rgb($pale)};
-  --dark:  #{$dark};
-  --dark-a:  #{hex2rgb($dark)};
-  --accent: #{$accent};
-  --accent-a: #{hex2rgb($accent)};
-  --darkred: #{$darkred};
-  --darkred-a: #{hex2rgb($darkred)};
-  --blue:  #{$blue};
-  --blue-a:  #{hex2rgb($blue)};
-  --darkblue: #{$blue};
-  --darkblue-a: #{hex2rgb($darkblue)};
+  /* Light shade */
+  --light: rgb(229, 229, 229);
+  /* Light shade with 50% alpha */
+  --light-a: color-mix(in srgb, rgb(229 229 229) 50%, transparent);
+
+  /* Pale shade */
+  --pale: rgb(189, 189, 189);
+  /* Pale shade with 50% alpha */
+  --pale-a: color-mix(in srgb, rgb(189 189 189) 50%, transparent);
+
+  /* Dark shade */
+  --dark: rgb(80, 80, 80);
+  /* Dark shade with 50% alpha */
+  --dark-a: color-mix(in srgb, rgb(80 80 80) 50%, transparent);
+
+  /* Accent color */
+  --accent: rgb(234, 80, 124);
+  /* Accent color with 50% alpha */
+  --accent-a: color-mix(in srgb, rgb(234 80 124) 50%, transparent);
+
+  /* Dark red */
+  --darkred: rgb(185, 80, 110);
+  /* Dark red with 50% alpha */
+  --darkred-a: color-mix(in srgb, rgb(185 80 110) 50%, transparent);
+
+  /* Blue */
+  --blue: rgb(156, 176, 190);
+  /* Blue with 50% alpha */
+  --blue-a: color-mix(in srgb, rgb(156 176 190) 50%, transparent);
+
+  /* Dark blue */
+  --darkblue: rgb(82, 118, 141);
+  /* Dark blue with 50% alpha */
+  --darkblue-a: color-mix(in srgb, rgb(82 118 141) 50%, transparent);
 }

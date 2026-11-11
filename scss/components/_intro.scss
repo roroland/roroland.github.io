@@ -8,7 +8,7 @@
 
 .intro--wrapper{  
   display: flex;
-  color: $dark;
+  color: var(--dark);
   flex-flow: row wrap;
   justify-content: center;
   align-items: flex-start;
@@ -69,7 +69,7 @@
       background-color: transparent;
     }
     to{
-      background-color: $lightest;
+      background-color: var(--lightest);
     }
   }
   @keyframes borderColor {
@@ -77,7 +77,7 @@
       border: 1pt solid transparent;
     }
     to{
-      border: 1pt solid $light;
+      border: 1pt solid var(--light);
     }
   }
   @keyframes dash {
@@ -118,14 +118,14 @@
     
     small{
       display: block;
-      color: $dark;
+      color: var(--dark);
       margin-top: $component-space-tiny;
       text-align: center;
       span{
         opacity: 0;
         animation: fade 1s ease-out 2.5s forwards;
         text-decoration: none;
-        color: $dark;
+        color: var(--dark);
       }
     }
   }

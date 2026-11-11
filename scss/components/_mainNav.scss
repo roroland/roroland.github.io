@@ -14,16 +14,16 @@
 // Scroll-driven: transición de estilos al 8% del scroll
 @keyframes mainNavScroll{
   0%{
-    background-color: rgba(var(--lightest-a), .75);
-    border-bottom: #{rel(1px)} solid rgba(var(--light-a), .85);
+    background-color: var(--lightest-a);
+    border-bottom: #{rel(1px)} solid var(--light-a);
     box-shadow: 0 0 0 rgba(0,0,0,0);
     padding: $component-space-tiny/2 0;
     position: sticky;
     top: 0;
   }
   100%{
-    background-color: rgba(var(--lightest-a), .85);
-    border-bottom: #{rel(1px)} solid $light;
+    background-color: var(--lightest-a);
+    border-bottom: #{rel(1px)} solid var(--light);
     border-radius: #{rel(30px)};
     box-shadow: 0 #{rel(2px)} #{rel(8px)} rgba(0,0,0,0.1);
     padding: $component-space-tiny 0;
@@ -32,8 +32,8 @@
   }
 }
 .mainNav{
-  background-color: rgba(var(--lightest-a), .75);
-  border-bottom: #{rel(1px)} solid rgba(var(--light-a), .85);
+  background-color: var(--lightest-a);
+  border-bottom: #{rel(1px)} solid var(--light-a);
   box-shadow: 0 0 0 rgba(0,0,0,0);
   backdrop-filter: blur(#{rel(2px)});
   display: flex;
@@ -62,19 +62,19 @@
       flex: 1 auto;
     }
     a{
-      color: rgba(var(--dark-a), .75);
+      color: var(--dark-a);
       text-decoration: none;
     }
   }
   
   &:hover{
-    background-color: rgba(var(--lightest), .85);
+    background-color: var(--lightest-a);
     ul li {
       a{
-        color: $darkblue;
+        color: var(--darkblue);
       }
       a:hover{
-        color: $darkred;
+        color: var(--darkred);
       }
     }
   }

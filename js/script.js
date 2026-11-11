@@ -3,19 +3,19 @@
 const showFeature = document.querySelector('.showFeature');
 
 // More about
-const more = document.querySelector('#more');
-more.addEventListener('click', function (e) {
-  e.preventDefault();
-  let moreAbout = document.querySelector('.moreAbout');
-  let timeline = document.querySelector('.timeline');
-  moreAbout.classList.add('is-open');
-  this.scrollIntoView({
-    block: 'start',
-    behavior: 'smooth'
-  })
-  this.style.setProperty('display', 'none');
-  setTimeout(timeline.classList.add('is-open'), 3000);
-});
+// const more = document.querySelector('#more');
+// more.addEventListener('click', function (e) {
+//   e.preventDefault();
+//   let moreAbout = document.querySelector('.moreAbout');
+//   let timeline = document.querySelector('.timeline');
+//   moreAbout.classList.add('is-open');
+//   this.scrollIntoView({
+//     block: 'start',
+//     behavior: 'smooth'
+//   })
+//   this.style.setProperty('display', 'none');
+//   setTimeout(timeline.classList.add('is-open'), 3000);
+// });
 
 // Menu
 const itemNav = document.querySelectorAll('.itemNav > li > a');

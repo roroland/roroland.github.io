@@ -72,12 +72,12 @@
         position: relative;
         width: 100%;
         &.is-active p{
-          color: $blue;
+          color: var(--blue);
         }
       }
       p{
         @extend .h4;
-        color: $dark;
+        color: var(--dark);
         position: relative;
         transition: 3s all ease-out;
         top: $component-space;
@@ -92,7 +92,7 @@
           transform: translateY(-$component-space-small);
         }
         p{
-          color: $darkred;
+          color: var(--darkred);
         }
       }
       .img-item{

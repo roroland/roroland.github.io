@@ -26,7 +26,7 @@ h4,
   font-size: 1.25rem;
 }
 strong {
-  color: $darkblue;
+  color: var(--darkblue);
   padding: 0 .15em;
   display: inline-block;
   position: relative;
@@ -42,11 +42,11 @@ h5,
   font-size: 1rem;
 }
 a{
-  color: $darkblue;
+  color: var(--darkblue);
   transition: color .3s ease-out;
   position: relative;
   &:hover{
-    color: $blue;
+    color: var(--blue);
   }
   &:focus::after,
   &:active::after{
