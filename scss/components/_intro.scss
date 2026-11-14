@@ -139,3 +139,44 @@
     }
   }
 }
+
+// ---------------------------------------------
+// Entrada secuencial del hero
+// TODO(fase 3): unificar .heroText y resolver border 1pt vs 2px
+// ---------------------------------------------
+@keyframes introHero {
+  from {
+    opacity: 0;
+    transform: translateY(#{rel(40px)});
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.heroText {
+  opacity: 0;
+  animation: introHero 1s 0s ease-out forwards;
+}
+.intro--wrapper h3 {
+  opacity: 0;
+  animation: introHero 1s 1.5s ease-out forwards;
+}
+.intro--wrapper h4 {
+  opacity: 0;
+  animation: introHero 1s 2.5s ease-out forwards;
+}
+@keyframes borderColorFade {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: #e5e5e5;
+  }
+}
+.heroText {
+  border: 2px solid transparent;
+  animation:
+    borderColorFade 1s 2.5s ease-out forwards,
+    introHero 1s 0s ease-out forwards;
+}

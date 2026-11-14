@@ -10,6 +10,7 @@
 // Estilos para enlaces y botones
 // Estilos para animaciones o efectos visuales (si aplica)
 @use '../abstracts/' as *;
+@use '../base/typography';
 
 // Home
 
@@ -277,4 +278,26 @@
 
 .toggle-link {
   cursor: pointer;
+}
+
+// ---------------------------------------------
+// Países del apartado "world"
+// TODO(fase 2): convive con .world--container de arriba
+// ---------------------------------------------
+.world--container ul li {
+  opacity: 0;
+  animation: countryIn forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes countryIn {
+  from {
+    opacity: 0;
+    transform: scale(0.25) rotate(20deg) translateX(#{rel(100px)});
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0) translateX(0);
+  }
 }

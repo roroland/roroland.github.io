@@ -1,9 +1,7 @@
 // ---------------------------------------------
-// Bloque principal: Index
-// Estilos para la página principal o landing.
-// Incluye layout, animaciones y responsive.
+// Bloques de componente
+// El orden de este fichero define el orden de emisión del CSS.
 // ---------------------------------------------
-@forward 'containers';
 @forward 'intro';
 @forward 'mainNav';
 @forward 'about';

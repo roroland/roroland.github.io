@@ -1,3 +1,8 @@
+// ---------------------------------------------
+// Tokens: custom properties globales
+// Colores, espaciados y offsets. Solo :root, sin selectores.
+// ---------------------------------------------
+
 :root {
   --lightest: rgb(247, 249, 249);
   --lightest-a: color-mix(in srgb, rgb(247 249 249) 50%, transparent);
@@ -22,4 +27,17 @@
 
   --darkblue: rgb(82, 118, 141);
   --darkblue-a: color-mix(in srgb, rgb(82 118 141) 50%, transparent);
+}
+
+:root {
+  --component-space: 1.5rem;
+  --component-space-small: 1rem;
+  --component-space-tiny: .5rem;
+  --xpos: 0;
+  --ypos: 0;
+  --data-what: -20rem;
+  --data-about: -10rem;
+  --data-works: -5rem;
+  --data-contact: 0;
+  --deco-width: #{rel(1636px)};
 }

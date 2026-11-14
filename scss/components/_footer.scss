@@ -4,6 +4,7 @@
 // Incluye layout, enlaces y elementos visuales.
 // ---------------------------------------------
 @use '../abstracts' as *;
+@use '../base/typography';
 
 footer{
   align-items: center;

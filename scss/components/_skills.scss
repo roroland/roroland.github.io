@@ -4,6 +4,7 @@
 // Incluye layout, tipografía y elementos visuales.
 // ---------------------------------------------
 @use '../abstracts/' as *;
+@use '../base/typography';
 
 .skills{
   &::after{
