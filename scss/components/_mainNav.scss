@@ -17,7 +17,7 @@
     background-color: var(--lightest-a);
     border-bottom: #{rel(1px)} solid var(--light-a);
     box-shadow: 0 0 0 rgba(0,0,0,0);
-    padding: calc(var(--component-space-tiny)/2) 0;
+    padding: calc(var(--component-space-tiny) / 2) 0;
     position: sticky;
     top: 0;
   }
@@ -38,7 +38,7 @@
   backdrop-filter: blur(#{rel(2px)});
   display: flex;
   flex-flow: row wrap;
-  padding: calc(var(--component-space-tiny)/2) 0;
+  padding: calc(var(--component-space-tiny) / 2) 0;
   opacity: 1;
   position: sticky;
   top: 0;

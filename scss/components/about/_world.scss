@@ -35,7 +35,7 @@
   ul{
     display: grid;
     grid-template-columns: 1fr 40% min-content;
-    grid-column-gap: var(--component-space-tiny);
+    column-gap: var(--component-space-tiny);
     grid-auto-flow: dense;
     margin: auto;
     .highlighted{
