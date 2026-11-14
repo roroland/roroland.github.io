@@ -2,6 +2,7 @@
 // Tokens: custom properties globales
 // Colores, espaciados y offsets. Solo :root, sin selectores.
 // ---------------------------------------------
+@use 'functions' as *;
 
 :root {
   --lightest: rgb(247, 249, 249);

@@ -6,7 +6,7 @@
 @use '../abstracts' as *;
 .gotoTop{
   color: var(--dark);
-  display: none;
+  display: block;
   background-color: rgba(255, 255, 255, .75);
   backdrop-filter: blur(#{rel(3px)});
   border-radius: #{rel(3px)} 0 0 #{rel(3px)};
@@ -15,6 +15,7 @@
   bottom: var(--component-space-small);
   right: 0;
   z-index: 99;
+  // Solo se muestra en móvil: en escritorio ya existe el menú de anclas
   @include up(md){
     display: none;
   }

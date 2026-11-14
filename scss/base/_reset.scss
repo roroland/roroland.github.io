@@ -6,9 +6,9 @@
   margin: 0;
 }
 
-*:focus,
-*:active{
-  outline: 0;
+:focus-visible{
+  outline: 2px solid var(--darkblue);
+  outline-offset: 2px;
 }
 
 ul{

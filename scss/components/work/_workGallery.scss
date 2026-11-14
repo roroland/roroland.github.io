@@ -50,7 +50,7 @@
     }
     @include up(md){
       display: block;
-      background-color: none;
+      background-color: transparent;
       top: 0;
     }
     img{

@@ -117,13 +117,7 @@
   }
 }
 
-// TODO(fase 5): sin uso en el HTML
-.question{
-  position: relative;
-  top: calc(-1 * var(--component-space-small));
-  padding: var(--component-space) 0 0;
-}
-
+// Corrección para Safari: el clip-path del panel se pinta mal a pantalla completa
 _::-webkit-full-page-media, _:future, :root .showFeature::before {
   display: none;
 }

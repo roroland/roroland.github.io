@@ -2,7 +2,6 @@
 // Feature: variantes por disciplina (show-*)
 // Las clases show-* las aplica js/script.js según el item del menú.
 // ---------------------------------------------
-@use '../../abstracts/' as *;
 
 .showFeature.show {
   &.show-layout {
@@ -59,29 +58,5 @@
     .placeholder {
       background-image: url('../images/works/traginer1.jpg');
     }
-    // TODO(fase 5): .is-music no existe en el HTML
-    .is-music{
-      @include down(md){
-        grid-column: 1/-1;
-      }
-    }
-  }
-}
-
-// ---------------------------------------------
-// Contenedor con borde inferior decorativo
-// TODO(fase 5): .featurebtm--three no existe en el HTML
-// ---------------------------------------------
-.container.featurebtm--three{
-  &::after{
-    content: '';
-    background: url('../images/deco-invertsml-3.svg') no-repeat;
-    background-size: cover;
-    position: absolute;
-    width: 100%;
-    min-height: #{rel(50px)};
-    bottom: -#{rel(1px)};
-    left: 0;
-    z-index: 1;
   }
 }

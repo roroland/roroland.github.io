@@ -132,22 +132,6 @@
 }
 
 // Keyframes de la animación del hero (usados por .heroText y sus paths)
-@keyframes colorBg {
-  from{
-    background-color: transparent;
-  }
-  to{
-    background-color: var(--lightest);
-  }
-}
-@keyframes borderColor {
-  from{
-    border: 1pt solid transparent;
-  }
-  to{
-    border: 1pt solid var(--light);
-  }
-}
 @keyframes dash {
   from {
     stroke-dashoffset: 100;

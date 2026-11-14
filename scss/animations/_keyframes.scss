@@ -13,26 +13,6 @@
   }
 }
 
-@keyframes top {
-  from {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-  to  {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes bottom {
-  from {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  to  {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 @keyframes right {
   from {
     transform: translateX(-200px);
@@ -59,11 +39,11 @@
     opacity: 0;
   }
   50% {
-    transform: translate(inherit, 50px) rotate(320deg) rotateY(135deg) scale(inherit);
+    transform: translate(-175px, 50px) rotate(320deg) rotateY(135deg) scale(1.25);
     opacity: .5;
   }
   100%  {
-    transform: translate(0, 0) rotate(0) scale(inherit);
+    transform: translate(0, 0) rotate(0) scale(1);
     opacity: 1;
   }
 }

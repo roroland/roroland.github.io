@@ -42,7 +42,6 @@
     grid-column: span 1;
     grid-row: span 1;
     position: relative;
-    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     
     &::after,
@@ -90,7 +89,7 @@
     position: absolute;
     color: #fff;
     left: 0;
-    transform: translate(-50% -50%);
+    transform: translate(-50%, -50%);
     text-shadow: 0 #{rel(2px)} var(--darkred);
     text-align: center;
     top: 50%;
@@ -124,11 +123,3 @@
   }
 }
 
-.placeholder-static {
-  grid-column: 2 / 3;
-  grid-row: 1;
-  
-  img {
-    max-width: 100%;
-  }
-}
