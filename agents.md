@@ -42,6 +42,11 @@ roroland.github.io/
 │   ├── rwd.html           # Responsive Web Design
 │   ├── music.html         # Music composer
 │   └── ui.html            # UI Design
+├── _includes/layouts/     # Layouts de página (cadena base → blog/post)
+├── _includes/partials/    # Parciales compartidos (mainNav.njk)
+├── blog/
+│   ├── index.njk          # Listado /blog/ (loop sobre collections.posts)
+│   └── posts/             # Posts en Markdown + posts.json (permalink/tags/layout)
 ├── scss/                  # Source SCSS files (ver "SCSS Architecture")
 ├── css/                   # Compiled CSS outputs
 │   ├── style.css          # Final (compressed)
@@ -79,6 +84,7 @@ scss/
 │   ├── skills/           # _skills, _avatar, _skillsNav
 │   ├── work/             # _work, _workGallery, _sizes
 │   ├── feature/          # _feature, _featureVariants, _featureContent, _placeholder
+│   ├── blog/             # _blog, _postList, _post (listado y artículo)
 │   ├── _mainNav.scss
 │   ├── _gotoTop.scss
 │   └── _footer.scss
@@ -97,6 +103,20 @@ Reglas del contrato (aplicadas por Stylelint):
   y `@include phone-large` (ancho mínimo), o `@include phone` / `@include phone-landscape`
   (solo teléfono). Ver `abstracts/_breakpoints.scss`.
 - `style.scss` no contiene reglas.
+
+### Blog (`/blog/`)
+
+- `blog/index.njk` genera la home del blog en `/blog/` y recorre
+  `collections.posts | reverse` (más recientes primero).
+- `blog/posts/posts.json` es un data file de carpeta: asigna el layout de post,
+  la tag `posts` y el permalink `/blog/{{ page.fileSlug }}/` a cada `.md`.
+- Añadir un post = crear un `.md` en `blog/posts/` con front matter
+  `title`, `description`, `date` y `tags`. No hay que tocar la config.
+- `eleventy.config.js` expone los filtros `readableDate` y `htmlDateString`,
+  formateados en UTC para evitar saltos de día por zona horaria.
+- Layouts: `layouts/base.njk` (head/nav/footer) → `layouts/blog.njk` (listado)
+  y `layouts/post.njk` (artículo + prosa). La nav vive en
+  `_includes/partials/mainNav.njk` y la usan tanto la home como el blog.
 
 ### Customization
 

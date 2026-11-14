@@ -1,0 +1,33 @@
+// ---------------------------------------------
+// Blog: contenedor común del listado y del post
+// ---------------------------------------------
+@use '../../abstracts/' as *;
+
+.container.blog,
+.container.post{
+  display: flex;
+  flex-flow: column nowrap;
+  gap: calc(var(--component-space) * 1.5);
+  margin: 0 auto;
+  max-width: #{rel(760px)};
+  min-height: calc(100vh - #{rel(80px)});
+  padding: calc(var(--component-space) * 2) var(--component-space) calc(var(--component-space) * 3);
+  width: 100%;
+  @include tablet{
+    padding-top: calc(var(--component-space) * 3);
+  }
+}
+
+.blogHeader,
+.postHeader{
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--component-space-small);
+  h1{
+    line-height: 1.15;
+  }
+  p{
+    color: var(--dark);
+    max-width: 48ch;
+  }
+}

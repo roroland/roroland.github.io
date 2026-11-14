@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+---
+{% set postTags = tags | reject("equalto", "posts") %}
+<article class="container post">
+  <header class="postHeader">
+    <p class="postMeta">
+      <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+      {%- if postTags.length %}
+      <span aria-hidden="true">·</span>
+      <span>{{ postTags | join(" / ") }}</span>
+      {%- endif %}
+    </p>
+    <h1>{{ title }}</h1>
+    {% if description %}<p class="postHeader-summary">{{ description }}</p>{% endif %}
+  </header>
+
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+
+  <nav class="postNav" aria-label="Blog">
+    <a href="/blog/">← All posts</a>
+  </nav>
+</article>

@@ -1,0 +1,30 @@
+---
+layout: layouts/blog.njk
+title: Blog
+description: Notes on front-end architecture, CSS, accessibility and the decisions behind the projects I work on.
+permalink: /blog/
+---
+<ul class="postList">
+  {%- for post in collections.posts | reverse %}
+  <li class="postList-item animatable">
+    <div class="postList-meta">
+      <time class="postList-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+      {%- set postTags = post.data.tags | reject("equalto", "posts") %}
+      {%- if postTags.length %}
+      <ul class="postTags">
+        {%- for tag in postTags %}
+        <li>{{ tag }}</li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+
+    <a class="postList-link" href="{{ post.url }}">
+      <h2>{{ post.data.title }}</h2>
+      {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+    </a>
+  </li>
+  {%- else %}
+  <li class="postList-empty">No posts yet. Come back soon.</li>
+  {%- endfor %}
+</ul>

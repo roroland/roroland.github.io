@@ -1,0 +1,104 @@
+// ---------------------------------------------
+// Blog: artículo (metadatos, prosa y navegación)
+// ---------------------------------------------
+@use '../../abstracts/' as *;
+
+.postMeta{
+  color: var(--pale);
+  display: flex;
+  flex-flow: row wrap;
+  font-size: .8rem;
+  gap: var(--component-space-tiny);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.prose{
+  color: var(--dark);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+
+  > * + *{
+    margin-top: 1.25em;
+  }
+
+  h2,
+  h3{
+    color: var(--dark);
+    line-height: 1.3;
+  }
+
+  h2{
+    font-size: 1.563rem;
+    margin-top: 2em;
+  }
+
+  h3{
+    font-size: 1.25rem;
+    margin-top: 1.75em;
+  }
+
+  ul,
+  ol{
+    padding-left: 1.25em;
+  }
+
+  ul{
+    list-style: disc;
+  }
+
+  ol{
+    list-style: decimal;
+  }
+
+  li{
+    margin-top: .35em;
+  }
+
+  blockquote{
+    border-left: #{rel(3px)} solid var(--accent);
+    color: var(--dark);
+    font-style: italic;
+    padding-left: var(--component-space-small);
+  }
+
+  code{
+    background: var(--light);
+    border-radius: #{rel(3px)};
+    font-family: ui-monospace, sfmono-regular, menlo, monospace;
+    font-size: .9em;
+    padding: .1em .35em;
+  }
+
+  pre{
+    background: var(--dark);
+    border-radius: #{rel(4px)};
+    color: var(--lightest);
+    overflow-x: auto;
+    padding: var(--component-space-small);
+    code{
+      background: none;
+      padding: 0;
+    }
+  }
+
+  img{
+    height: auto;
+    max-width: 100%;
+  }
+
+  a{
+    color: var(--darkblue);
+    &:hover{
+      color: var(--darkred);
+    }
+  }
+}
+
+.postNav{
+  border-top: #{rel(1px)} solid var(--light);
+  padding-top: var(--component-space);
+  a{
+    text-decoration: none;
+  }
+}
