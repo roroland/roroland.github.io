@@ -2,7 +2,6 @@
 // Skills: navegación de disciplinas
 // ---------------------------------------------
 @use '../../abstracts/' as *;
-@use '../../base/typography';
 
 .skills-nav{
   align-self: normal;
@@ -12,7 +11,7 @@
   display: flex;
   flex-flow: column nowrap;
   position: relative;
-  @media only screen and (min-width: 48em){
+  @include up(md){
     align-self: initial;
     width: auto;
   }
@@ -28,7 +27,7 @@
     justify-content: center;
     list-style: none;
     margin: var(--component-space) auto 0;
-    @media only screen and (min-width: 48em){
+    @include up(md){
       grid-template-columns: 1fr repeat(5, 7.5em) 1fr;
       grid-template-rows: min-content minmax(#{rel(150px)}, max-content) min-content;
     }
@@ -54,7 +53,7 @@
       }
     }
     p{
-      @extend .h4;
+      @extend %h4;
       color: var(--dark);
       position: relative;
       transition: 3s all ease-out;
@@ -92,22 +91,22 @@
     }
   }
   .item-layout{
-    @media only screen and (min-width: 48em){
+    @include up(md){
       grid-column: 2 / 3;
     }
   }
   .item-responsive{
-    @media only screen and (min-width: 48em){
+    @include up(md){
       grid-column: 4 / 5;
     }
   }
   .item-css{
-    @media only screen and (min-width: 48em){
+    @include up(md){
       grid-column: 6 / 7;
     }
   }
   .item-ui{
-    @media only screen and (min-width: 48em){
+    @include up(md){
       grid-column: 3 / 4;
     }
     .img-item{
@@ -116,7 +115,7 @@
   }
   .item-music{
     grid-column: 1 / -1;
-    @media only screen and (min-width: 48em){
+    @include up(md){
       grid-column: 5 / 6;
     }
   }

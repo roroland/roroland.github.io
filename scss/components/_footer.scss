@@ -4,7 +4,6 @@
 // Incluye layout, enlaces y elementos visuales.
 // ---------------------------------------------
 @use '../abstracts' as *;
-@use '../base/typography';
 
 footer{
   align-items: center;
@@ -16,12 +15,12 @@ footer{
   background-size: cover;
   margin-top: calc(var(--component-space) * 3);
   min-height: 15rem;
-  @media only screen and (min-width: 64em){
+  @include up(lg){
     margin-top: 0;
     background-size: 100%;
   }
   p{
-    @extend .h4;
+    @extend %h4;
     background: var(--dark-a);
     margin: calc(var(--component-space) * 2) 0 var(--component-space-small);
     flex: 1 50%;
@@ -29,7 +28,7 @@ footer{
     color: white;
     display: inline-block;
     padding: var(--component-space);
-    @media only screen and (min-width: 64em){
+    @include up(lg){
       flex: 0 45%;
       padding: var(--component-space);
     }

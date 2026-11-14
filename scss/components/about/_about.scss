@@ -4,7 +4,7 @@
 @use '../../abstracts/' as *;
 
 .about{
-  @media only screen and (max-width: 48em){
+  @include down(md){
     padding: 0;
   }
   &::after{
@@ -16,7 +16,7 @@
     margin: 0 auto;
     position: relative;
     z-index: 1;
-    @media only screen and (min-width: 87em){
+    @include up(xl){
       max-width: 80vw;
     }
   }
@@ -24,19 +24,19 @@
     grid-column: 1 / -1;
     align-self: flex-start;
     padding: 0 var(--component-space);
-    @media only screen and (min-width: 48em){
+    @include up(md){
       max-width: 80vw;
     }
     h1{
       font-size: 2.441rem;
       font-weight: normal;
-      @media only screen and (max-width: 47.99em){
+      @include down(md){
         color: var(--dark);
         margin-top: 0;
         text-align: center;
         font-size: 1.953rem;
       }
-      @media only screen and (min-width: 48em){
+      @include up(md){
         color: var(--lightest-a);
         margin-top: -15vw;
       }

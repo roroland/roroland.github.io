@@ -61,7 +61,7 @@
     }
     // TODO(fase 5): .is-music no existe en el HTML
     .is-music{
-      @media only screen and (max-width: 48em){
+      @include down(md){
         grid-column: 1/-1;
       }
     }

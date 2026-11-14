@@ -1,15 +1,17 @@
 // ---------------------------------------------
 // Base: raíz del documento
 // ---------------------------------------------
+@use '../abstracts' as *;
+
 html{
   font-size: 100%;
   height: 100%;
   line-height: 1.5;
   scroll-behavior: smooth;
-  @media only screen and (max-width: 47.99em){
+  @include down(md){
     font-size: 85%;
   }
-  @media only screen and (min-width: 90em){
+  @include up(xxl){
     font-size: 125%;
   }  
 }

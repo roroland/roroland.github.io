@@ -27,6 +27,11 @@
 
   --darkblue: rgb(82, 118, 141);
   --darkblue-a: color-mix(in srgb, rgb(82 118 141) 50%, transparent);
+
+  // Tonos propios del modal
+  --plum: rgb(71, 44, 83);
+  --plum-soft: rgba(77, 28, 53, .25);
+  --shadow-strong: rgba(24, 16, 16, .36);
 }
 
 :root {

@@ -15,7 +15,7 @@
     animation-timeline: view();
     animation-range: entry 0% cover 60%;
   }
-  @media only screen and (min-width: 48em){
+  @include up(md){
     grid-column: 1 / 4;
     grid-row: 1;
   }

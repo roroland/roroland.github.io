@@ -21,7 +21,7 @@
   animation: worldIn forwards;
   animation-timeline: view();
   animation-range: entry 0% cover 80%;
-  @media only screen and (min-width: 48em){
+  @include up(md){
     padding: 1rem var(--component-space-small);
     grid-column: 4 / -1;
   }

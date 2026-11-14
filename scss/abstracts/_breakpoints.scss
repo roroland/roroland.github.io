@@ -1,0 +1,39 @@
+// ---------------------------------------------
+// Breakpoints y mixins de media query
+// Uso: @include up(md) { ... }
+// ---------------------------------------------
+@use 'sass:map';
+
+$breakpoints: (
+  sm: 40em,
+  md: 48em,
+  lg: 64em,
+  xl: 87em,
+  xxl: 90em,
+  xxxl: 100em,
+);
+
+// Restamos 0.01em para no solapar con el min-width equivalente
+$breakpoints-down: (
+  sm: 39.99em,
+  md: 47.99em,
+  lg: 63.99em,
+);
+
+@mixin up($key) {
+  @media only screen and (min-width: map.get($breakpoints, $key)) {
+    @content;
+  }
+}
+
+@mixin down($key) {
+  @media only screen and (max-width: map.get($breakpoints-down, $key)) {
+    @content;
+  }
+}
+
+@mixin down-landscape($key) {
+  @media only screen and (max-width: map.get($breakpoints-down, $key)) and (orientation: landscape) {
+    @content;
+  }
+}

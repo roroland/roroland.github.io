@@ -10,7 +10,7 @@
   grid-auto-rows: min-content;
   margin: var(--component-space) 0 0;
   width: 100%;
-  @media only screen and (min-width: 40em){
+  @include up(sm){
     padding-right: var(--component-space);
     grid-template-columns: #{rel(250px)} 1fr;
     grid-auto-rows: 1fr;
@@ -29,7 +29,7 @@
     animation-timeline: view();
     --range-shift: 0%;
     animation-range: entry calc(0% + var(--range-shift)) cover calc(20% + var(--range-shift));
-    @media only screen and (min-width: 48em){
+    @include up(md){
       transform: translateY(5rem) rotateX(85deg) skew(10deg, -5deg);
     }
   }
@@ -40,7 +40,7 @@
     top: var(--component-space);
     width: 100%;
     z-index: 10;
-    @media only screen and (max-width: 47.99em){
+    @include down(md){
       background-color: white;
       box-shadow: 0 #{rel(5px)} #{rel(5px)} var(--dark-a);
       height: #{rel(48px)};
@@ -48,7 +48,7 @@
         display: none;
       }
     }
-    @media only screen and (min-width: 48em){
+    @include up(md){
       display: block;
       background-color: none;
       top: 0;
@@ -59,12 +59,12 @@
       border: 0;
       transform: inherit;
       top: var(--component-space);
-      @media only screen and (max-width: 48em) {
+      @include down(md) {
         align-self: flex-start;
         max-width: #{rel(120px)};
         left: .75rem;
       }
-      @media only screen and (min-width: 48.01em){
+      @include up(md){
         left: 0;
         max-width: #{rel(200px)};
       }
@@ -82,12 +82,12 @@
     > img{
       --range-shift: calc((sibling-index() - 1) / sibling-count() * 30%);
     }
-    @media only screen and (min-width: 48em){
+    @include up(md){
       grid-template-columns: repeat(auto-fit, minmax(#{rel(220px)}, 1fr));
       justify-items: initial;
       padding: 0;
     }
-    @media only screen and (min-width: 100em){
+    @include up(xxxl){
       min-height: #{rel(200px)};
     }
   }

@@ -10,22 +10,22 @@
   flex-flow: row wrap;
   justify-content: space-between;
   padding: 0;
-  @media only screen and (max-width: 47.99em){
+  @include down(md){
     min-height: calc(100vh - #{rel(80px)});
   }
-  @media only screen and (max-width: 47.99em) and (orientation: landscape){
+  @include down-landscape(md){
     min-height: 82vh;
   }
-  @media only screen and (min-width: 48em){
+  @include up(md){
     flex-flow: column nowrap;
     justify-content: center;
     min-height: 91vh;
     padding: inherit;
   }
-  @media only screen and (min-width: 64em){
+  @include up(lg){
     min-height: 85vh;
   }
-  @media only screen and (min-width: 100em){
+  @include up(xxxl){
     min-height: 90vh;
     justify-content: center;
   }
@@ -40,14 +40,14 @@
   position: relative;
   transition: all .3s ease-out;
   width: 100%;
-  @media only screen and (min-width: 48em){
+  @include up(md){
     flex-flow: column nowrap;
     gap: calc(var(--component-space) * 2);
     align-items: center;
     justify-content: center;
     height: 100%;
   }
-  @media only screen and (min-width: 100em){
+  @include up(xxxl){
     top: 0;
   }
   a{
@@ -69,13 +69,13 @@
     z-index: 20;
     width: 100%;
 
-    @media only screen and (max-width: 47.99em) {
+    @include down(md) {
       border: 0;
       padding: 0;
       margin-bottom: var(--component-space);
       width: 85%;
     }
-    @media only screen and (min-width: 48em) {
+    @include up(md) {
       position: relative;
     }
 
@@ -104,10 +104,10 @@
   h4{
     opacity: 0;
     z-index: 10;
-    @media only screen and (max-width: 47.99em) and (orientation: landscape){
+    @include down-landscape(md){
       display: none;
     }
-    @media only screen and (min-width: 100em){
+    @include up(xxxl){
       top: var(--component-space);
     }
 

@@ -13,7 +13,7 @@
   overflow: hidden;
   z-index: 0;
 
-  @media only screen and (max-width: 48em) {
+  @include down(md) {
     min-height: #{rel(120px)};
     max-width: 100%;
   }

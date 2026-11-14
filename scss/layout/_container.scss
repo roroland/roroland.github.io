@@ -1,12 +1,14 @@
 // ---------------------------------------------
 // Layout: contenedor de sección
 // ---------------------------------------------
+@use '../abstracts' as *;
+
 .container{
   min-height: 100vh;
   margin: 0 auto;
   padding: 1rem 0;
   position: relative;
-  @media only screen and (min-width: 48em) {
+  @include up(md) {
     min-height: auto;
   }
   a:hover{

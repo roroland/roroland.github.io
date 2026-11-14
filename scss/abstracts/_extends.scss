@@ -1,0 +1,17 @@
+// ---------------------------------------------
+// Placeholders de tipografía reutilizables.
+// Se usan con @extend para no acoplar componentes a clases reales.
+// ---------------------------------------------
+
+%h3 {
+  font-size: 1.563rem;
+  font-weight: 600;
+}
+
+%h4 {
+  font-size: 1.25rem;
+}
+
+%h5 {
+  font-size: 1rem;
+}

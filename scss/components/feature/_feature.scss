@@ -31,7 +31,7 @@
     [class^='placeholder']{
       background-size: 160%;
     }
-    @media only screen and (min-width: 64em){
+    @include up(lg){
       max-height: #{rel(1000px)};
     }
 
