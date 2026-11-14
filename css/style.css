@@ -85,39 +85,22 @@ ul {
     opacity: 1;
   }
 }
-/* Color palette defined with native CSS variables using rgb() and alpha variants via color-mix */
 :root {
-  /* Lightest shade */
   --lightest: rgb(247, 249, 249);
-  /* Lightest shade with 50% alpha */
   --lightest-a: color-mix(in srgb, rgb(247 249 249) 50%, transparent);
-  /* Light shade */
   --light: rgb(229, 229, 229);
-  /* Light shade with 50% alpha */
   --light-a: color-mix(in srgb, rgb(229 229 229) 50%, transparent);
-  /* Pale shade */
   --pale: rgb(189, 189, 189);
-  /* Pale shade with 50% alpha */
   --pale-a: color-mix(in srgb, rgb(189 189 189) 50%, transparent);
-  /* Dark shade */
   --dark: rgb(80, 80, 80);
-  /* Dark shade with 50% alpha */
   --dark-a: color-mix(in srgb, rgb(80 80 80) 50%, transparent);
-  /* Accent color */
   --accent: rgb(234, 80, 124);
-  /* Accent color with 50% alpha */
   --accent-a: color-mix(in srgb, rgb(234 80 124) 50%, transparent);
-  /* Dark red */
   --darkred: rgb(185, 80, 110);
-  /* Dark red with 50% alpha */
   --darkred-a: color-mix(in srgb, rgb(185 80 110) 50%, transparent);
-  /* Blue */
   --blue: rgb(156, 176, 190);
-  /* Blue with 50% alpha */
   --blue-a: color-mix(in srgb, rgb(156 176 190) 50%, transparent);
-  /* Dark blue */
   --darkblue: rgb(82, 118, 141);
-  /* Dark blue with 50% alpha */
   --darkblue-a: color-mix(in srgb, rgb(82 118 141) 50%, transparent);
 }
 
