@@ -108,7 +108,7 @@
       display: none;
     }
     @media only screen and (min-width: 100em){
-      top: #{$component-space};
+      top: var(--component-space);
     }
     
     > span{
@@ -119,7 +119,7 @@
     small{
       display: block;
       color: var(--dark);
-      margin-top: $component-space-tiny;
+      margin-top: var(--component-space-tiny);
       text-align: center;
       span{
         opacity: 0;

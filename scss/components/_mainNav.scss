@@ -38,7 +38,7 @@
   backdrop-filter: blur(#{rel(2px)});
   display: flex;
   flex-flow: row wrap;
-  padding: $component-space-tiny/2 0;
+  padding: calc(var(--component-space-tiny)/2) 0;
   opacity: 1;
   position: sticky;
   top: 0;

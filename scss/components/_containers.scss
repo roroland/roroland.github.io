@@ -79,10 +79,10 @@
   display: block;
 }
 .line{
-  margin: $component-space 0;
+  margin: var(--component-space) 0;
   position: relative;
   &.line-over{
-    margin: $component-space 0 0;
+    margin: var(--component-space) 0 0;
     top: -2rem;
     &:last-of-type{
       top: 0;

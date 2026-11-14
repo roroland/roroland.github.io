@@ -49,7 +49,7 @@
       grid-template-columns: 1fr 1fr;
       justify-content: center;
       list-style: none;
-      margin: $component-space auto 0;
+      margin: var(--component-space) auto 0;
       @media only screen and (min-width: 48em){
         grid-template-columns: 1fr repeat(5, 7.5em) 1fr;
         grid-template-rows: min-content minmax(#{rel(150px)}, max-content) min-content;
@@ -61,7 +61,7 @@
       flex-flow: column nowrap;
       text-align: center;
       position: relative;
-      padding: $component-space 0;
+      padding: var(--component-space) 0;
       will-change: transform, top;
       a{
         display: flex;
@@ -80,16 +80,16 @@
         color: var(--dark);
         position: relative;
         transition: 3s all ease-out;
-        top: $component-space;
+        top: var(--component-space);
       }
       &:hover{
         .img-mask{
-          top: -$component-space-small;
+          top: calc(-1 * var(--component-space-small));
         }
         .img-item{
           filter: blur(#{rel(2px)});
           opacity: .15;
-          transform: translateY(-$component-space-small);
+          transform: translateY(calc(-1 * var(--component-space-small)));
         }
         p{
           color: var(--darkred);
@@ -109,7 +109,7 @@
         background: url('../images/feature-mask.png') no-repeat center;
         background-size: contain;
         position: relative;
-        top: -$component-space;
+        top: calc(-1 * var(--component-space));
         transition: .5s all ease-out;
       }
     }

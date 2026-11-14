@@ -194,8 +194,8 @@
 
 .question{
   position: relative;
-  top: -$component-space-small;
-  padding: $component-space 0 0;
+  top: calc(-1 * var(--component-space-small));
+  padding: var(--component-space) 0 0;
 }
 
 _::-webkit-full-page-media, _:future, :root .showFeature::before {
