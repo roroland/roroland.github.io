@@ -4,7 +4,7 @@
 @use '../../abstracts/' as *;
 
 .about{
-  @include down(md){
+  @include phone{
     padding: 0;
   }
   &::after{
@@ -16,7 +16,7 @@
     margin: 0 auto;
     position: relative;
     z-index: 1;
-    @include up(xl){
+    @include desktop{
       max-width: 80vw;
     }
   }
@@ -24,19 +24,19 @@
     grid-column: 1 / -1;
     align-self: flex-start;
     padding: 0 var(--component-space);
-    @include up(md){
+    @include tablet{
       max-width: 80vw;
     }
     h1{
       font-size: 2.441rem;
       font-weight: normal;
-      @include down(md){
+      @include phone{
         color: var(--dark);
         margin-top: 0;
         text-align: center;
         font-size: 1.953rem;
       }
-      @include up(md){
+      @include tablet{
         color: var(--lightest-a);
         margin-top: -15vw;
       }

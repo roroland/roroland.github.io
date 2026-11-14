@@ -10,7 +10,7 @@
 .placeholder {
   display: none;
   overflow: hidden;
-  @include up(lg){
+  @include laptop{
     display: grid;
     background-color: var(--darkred);
     background-position: var(--xpos) var(--ypos);
@@ -25,7 +25,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
   }
-  @include up(xxxl){
+  @include desktop-ultra{
     min-height: 80vh;
   }
   &.is-active span {

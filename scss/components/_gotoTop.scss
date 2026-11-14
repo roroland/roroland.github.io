@@ -16,7 +16,7 @@
   right: 0;
   z-index: 99;
   // Solo se muestra en móvil: en escritorio ya existe el menú de anclas
-  @include up(md){
+  @include tablet{
     display: none;
   }
   img{

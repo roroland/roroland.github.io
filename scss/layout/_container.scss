@@ -8,7 +8,7 @@
   margin: 0 auto;
   padding: 1rem 0;
   position: relative;
-  @include up(md) {
+  @include tablet {
     min-height: auto;
   }
   a:hover{

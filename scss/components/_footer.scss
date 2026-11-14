@@ -15,7 +15,7 @@ footer{
   background-size: cover;
   margin-top: calc(var(--component-space) * 3);
   min-height: 15rem;
-  @include up(lg){
+  @include laptop{
     margin-top: 0;
     background-size: 100%;
   }
@@ -28,7 +28,7 @@ footer{
     color: white;
     display: inline-block;
     padding: var(--component-space);
-    @include up(lg){
+    @include laptop{
       flex: 0 45%;
       padding: var(--component-space);
     }

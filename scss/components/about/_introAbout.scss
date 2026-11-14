@@ -15,7 +15,7 @@
     animation-timeline: view();
     animation-range: entry 0% cover 60%;
   }
-  @include up(md){
+  @include tablet{
     grid-column: 1 / 4;
     grid-row: 1;
   }

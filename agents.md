@@ -92,7 +92,10 @@ Reglas del contrato (aplicadas por Stylelint):
 - Un fichero = un componente = un selector raíz. Anidamiento máximo 3.
 - `@keyframes` a nivel raíz del fichero, con prefijo del componente.
 - Nada de `@extend` a clases reales: usar placeholders de `abstracts/_extends.scss`.
-- Las media queries se escriben con `@include up(md)`, `@include down(md)`.
+- Las media queries se escriben con mixins por dispositivo: `@include tablet`,
+  `@include laptop`, `@include desktop`, `@include desktop-hd`, `@include desktop-ultra`
+  y `@include phone-large` (ancho mínimo), o `@include phone` / `@include phone-landscape`
+  (solo teléfono). Ver `abstracts/_breakpoints.scss`.
 - `style.scss` no contiene reglas.
 
 ### Customization

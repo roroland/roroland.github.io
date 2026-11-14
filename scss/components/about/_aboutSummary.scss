@@ -10,7 +10,7 @@
   column-gap: var(--component-space);
   overflow-x: clip;
   padding: 0 0 var(--component-space) 0;
-  @include up(xxl){
+  @include desktop-hd{
     padding: 0 0 var(--component-space) 0;
   }
   p,

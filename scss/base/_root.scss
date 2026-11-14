@@ -8,10 +8,10 @@ html{
   height: 100%;
   line-height: 1.5;
   scroll-behavior: smooth;
-  @include down(md){
+  @include phone{
     font-size: 85%;
   }
-  @include up(xxl){
+  @include desktop-hd{
     font-size: 125%;
   }  
 }

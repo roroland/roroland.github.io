@@ -10,22 +10,22 @@
   flex-flow: row wrap;
   justify-content: space-between;
   padding: 0;
-  @include down(md){
+  @include phone{
     min-height: calc(100vh - #{rel(80px)});
   }
-  @include down-landscape(md){
+  @include phone-landscape{
     min-height: 82vh;
   }
-  @include up(md){
+  @include tablet{
     flex-flow: column nowrap;
     justify-content: center;
     min-height: 91vh;
     padding: inherit;
   }
-  @include up(lg){
+  @include laptop{
     min-height: 85vh;
   }
-  @include up(xxxl){
+  @include desktop-ultra{
     min-height: 90vh;
     justify-content: center;
   }
@@ -40,14 +40,14 @@
   position: relative;
   transition: all .3s ease-out;
   width: 100%;
-  @include up(md){
+  @include tablet{
     flex-flow: column nowrap;
     gap: calc(var(--component-space) * 2);
     align-items: center;
     justify-content: center;
     height: 100%;
   }
-  @include up(xxxl){
+  @include desktop-ultra{
     top: 0;
   }
   a{
@@ -68,13 +68,13 @@
     z-index: 20;
     width: 100%;
 
-    @include down(md) {
+    @include phone {
       border: 0;
       padding: 0;
       margin-bottom: var(--component-space);
       width: 85%;
     }
-    @include up(md) {
+    @include tablet {
       position: relative;
     }
 
@@ -103,10 +103,10 @@
   h4{
     opacity: 0;
     z-index: 10;
-    @include down-landscape(md){
+    @include phone-landscape{
       display: none;
     }
-    @include up(xxxl){
+    @include desktop-ultra{
       top: var(--component-space);
     }
 

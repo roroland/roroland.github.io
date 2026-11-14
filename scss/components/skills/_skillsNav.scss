@@ -11,7 +11,7 @@
   display: flex;
   flex-flow: column nowrap;
   position: relative;
-  @include up(md){
+  @include tablet{
     align-self: initial;
     width: auto;
   }
@@ -27,7 +27,7 @@
     justify-content: center;
     list-style: none;
     margin: var(--component-space) auto 0;
-    @include up(md){
+    @include tablet{
       grid-template-columns: 1fr repeat(5, 7.5em) 1fr;
       grid-template-rows: min-content minmax(#{rel(150px)}, max-content) min-content;
     }
@@ -91,22 +91,22 @@
     }
   }
   .item-layout{
-    @include up(md){
+    @include tablet{
       grid-column: 2 / 3;
     }
   }
   .item-responsive{
-    @include up(md){
+    @include tablet{
       grid-column: 4 / 5;
     }
   }
   .item-css{
-    @include up(md){
+    @include tablet{
       grid-column: 6 / 7;
     }
   }
   .item-ui{
-    @include up(md){
+    @include tablet{
       grid-column: 3 / 4;
     }
     .img-item{
@@ -115,7 +115,7 @@
   }
   .item-music{
     grid-column: 1 / -1;
-    @include up(md){
+    @include tablet{
       grid-column: 5 / 6;
     }
   }

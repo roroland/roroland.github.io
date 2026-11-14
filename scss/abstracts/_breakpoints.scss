@@ -1,39 +1,69 @@
 // ---------------------------------------------
-// Breakpoints y mixins de media query
-// Uso: @include up(md) { ... }
+// Breakpoints por dispositivo (mobile-first)
+// Los mixins de ancho mínimo aplican a ese tamaño y superiores.
+// Uso: @include tablet { ... }   @include phone { ... }
 // ---------------------------------------------
 @use 'sass:map';
 
 $breakpoints: (
-  sm: 40em,
-  md: 48em,
-  lg: 64em,
-  xl: 87em,
-  xxl: 90em,
-  xxxl: 100em,
+  phone-large: 40em,     // 640px  movil grande en horizontal
+  tablet: 48em,          // 768px
+  laptop: 64em,          // 1024px
+  desktop: 87em,         // 1392px
+  desktop-hd: 90em,      // 1440px
+  desktop-ultra: 100em,  // 1600px
 );
 
-// Restamos 0.01em para no solapar con el min-width equivalente
+// 0.01em por debajo para no solapar con el min-width equivalente
 $breakpoints-down: (
-  sm: 39.99em,
-  md: 47.99em,
-  lg: 63.99em,
+  phone: 47.99em,
 );
 
-@mixin up($key) {
-  @media only screen and (min-width: map.get($breakpoints, $key)) {
+@mixin phone-large {
+  @media only screen and (min-width: map.get($breakpoints, phone-large)) {
     @content;
   }
 }
 
-@mixin down($key) {
-  @media only screen and (max-width: map.get($breakpoints-down, $key)) {
+@mixin tablet {
+  @media only screen and (min-width: map.get($breakpoints, tablet)) {
     @content;
   }
 }
 
-@mixin down-landscape($key) {
-  @media only screen and (max-width: map.get($breakpoints-down, $key)) and (orientation: landscape) {
+@mixin laptop {
+  @media only screen and (min-width: map.get($breakpoints, laptop)) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: map.get($breakpoints, desktop)) {
+    @content;
+  }
+}
+
+@mixin desktop-hd {
+  @media only screen and (min-width: map.get($breakpoints, desktop-hd)) {
+    @content;
+  }
+}
+
+@mixin desktop-ultra {
+  @media only screen and (min-width: map.get($breakpoints, desktop-ultra)) {
+    @content;
+  }
+}
+
+// Solo teléfono (por debajo de tablet)
+@mixin phone {
+  @media only screen and (max-width: map.get($breakpoints-down, phone)) {
+    @content;
+  }
+}
+
+@mixin phone-landscape {
+  @media only screen and (max-width: map.get($breakpoints-down, phone)) and (orientation: landscape) {
     @content;
   }
 }

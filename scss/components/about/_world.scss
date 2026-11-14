@@ -21,7 +21,7 @@
   animation: worldIn forwards;
   animation-timeline: view();
   animation-range: entry 0% cover 80%;
-  @include up(md){
+  @include tablet{
     padding: 1rem var(--component-space-small);
     grid-column: 4 / -1;
   }

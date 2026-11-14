@@ -9,7 +9,7 @@
   }
   .normal{
     grid-column: span 1;
-    @include up(md){
+    @include tablet{
       grid-column: span 2;
     }
   }

@@ -13,7 +13,7 @@
   overflow: hidden;
   z-index: 0;
 
-  @include down(md) {
+  @include phone {
     min-height: #{rel(120px)};
     max-width: 100%;
   }
