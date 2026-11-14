@@ -1,0 +1,29 @@
+// ---------------------------------------------
+// About: timeline profesional
+// ---------------------------------------------
+@use '../../abstracts/' as *;
+
+.about .aboutSummary .timeline{
+  grid-column: 1 / -1;
+  display: none;
+  @media only screen and (min-width: 48em){
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+  li{
+    margin-bottom: var(--component-space);
+    perspective: #{rel(1000px)};
+    opacity: 0;
+    h4{
+      margin-left: var(--component-space);
+    }
+    animation-name: card;
+    animation-delay: calc(sibling-index() * 0.25s);
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(1,-.41,-.85, 1.25);
+    animation-fill-mode: forwards;
+    p:first-child{
+      border-right: 0;
+    }
+  }
+}

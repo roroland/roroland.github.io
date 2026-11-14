@@ -1,0 +1,19 @@
+// ---------------------------------------------
+// Work: estructura de la sección
+// ---------------------------------------------
+.work{
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  &::after{
+    background: none;
+  }
+  h2,
+  h4{
+    text-align: center;
+  }
+  h4{
+    margin: var(--component-space) 0;
+  }
+}

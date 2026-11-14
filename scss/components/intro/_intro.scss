@@ -1,12 +1,37 @@
 // ---------------------------------------------
-// Bloque principal: Intro
-// Estilos para la sección de introducción.
-// Incluye layout, tipografía y animaciones.
+// Intro: estructura de la sección
 // ---------------------------------------------
-// Avatar
-@use '../abstracts/' as *;
+@use '../../abstracts/' as *;
 
-.intro--wrapper{  
+// El contenedor de la intro ocupa la pantalla completa
+.container.intro{
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 0;
+  @media only screen and (max-width: 47.99em){
+    min-height: calc(100vh - #{rel(80px)});
+  }
+  @media only screen and (max-width: 47.99em) and (orientation: landscape){
+    min-height: 82vh;
+  }
+  @media only screen and (min-width: 48em){
+    flex-flow: column nowrap;
+    justify-content: center;
+    min-height: 91vh;
+    padding: inherit;
+  }
+  @media only screen and (min-width: 64em){
+    min-height: 85vh;
+  }
+  @media only screen and (min-width: 100em){
+    min-height: 90vh;
+    justify-content: center;
+  }
+}
+
+.intro--wrapper{
   display: flex;
   color: var(--dark);
   flex-flow: row wrap;
@@ -43,7 +68,7 @@
     transition: top .25s ease-in-out;
     z-index: 20;
     width: 100%;
-    
+
     @media only screen and (max-width: 47.99em) {
       border: 0;
       padding: 0;
@@ -110,12 +135,12 @@
     @media only screen and (min-width: 100em){
       top: var(--component-space);
     }
-    
+
     > span{
       font-weight: 400;
       text-decoration: underline;
     }
-    
+
     small{
       display: block;
       color: var(--dark);
@@ -138,45 +163,4 @@
       opacity: 1;
     }
   }
-}
-
-// ---------------------------------------------
-// Entrada secuencial del hero
-// TODO(fase 3): unificar .heroText y resolver border 1pt vs 2px
-// ---------------------------------------------
-@keyframes introHero {
-  from {
-    opacity: 0;
-    transform: translateY(#{rel(40px)});
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.heroText {
-  opacity: 0;
-  animation: introHero 1s 0s ease-out forwards;
-}
-.intro--wrapper h3 {
-  opacity: 0;
-  animation: introHero 1s 1.5s ease-out forwards;
-}
-.intro--wrapper h4 {
-  opacity: 0;
-  animation: introHero 1s 2.5s ease-out forwards;
-}
-@keyframes borderColorFade {
-  from {
-    border-color: transparent;
-  }
-  to {
-    border-color: #e5e5e5;
-  }
-}
-.heroText {
-  border: 2px solid transparent;
-  animation:
-    borderColorFade 1s 2.5s ease-out forwards,
-    introHero 1s 0s ease-out forwards;
 }

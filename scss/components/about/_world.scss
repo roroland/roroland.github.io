@@ -1,0 +1,105 @@
+// ---------------------------------------------
+// About: apartado "world" con los países
+// ---------------------------------------------
+@use '../../abstracts/' as *;
+
+.about .aboutSummary .world--container{
+  display: flex;
+  flex-flow: row-reverse wrap;
+  justify-content: space-between;
+  border-radius: 50%;
+  padding: 2.25rem 0;
+  position: relative;
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 100%;
+  @starting-style{
+    opacity: 0;
+    transform: translateX(#{rel(120px)});
+  }
+
+  animation: worldIn forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 80%;
+  @media only screen and (min-width: 48em){
+    padding: 1rem var(--component-space-small);
+    grid-column: 4 / -1;
+  }
+  h3{
+    color: var(--dark);
+    opacity: .75;
+    @keyframes worldIn {
+      0% {
+        opacity: 0;
+        transform: translateX(#{rel(120px)});
+      }
+      50%, 90% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(#{rel(120px)});
+      }
+    }
+    font-size: 2.25rem;
+    writing-mode: tb;
+    text-align: center;
+  }
+  ul{
+    display: grid;
+    grid-template-columns: 1fr 40% min-content;
+    grid-column-gap: var(--component-space-tiny);
+    grid-auto-flow: dense;
+    margin: auto;
+    .highlighted{
+      color: var(--pale);
+      font-weight: 600;
+      font-size: 2rem;
+      grid-column: span 2;
+    }
+    li{
+      color: var(--light);
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1;
+      display: grid;
+      letter-spacing: -0.025em;
+      place-self: center;
+      opacity: 0;
+    }
+
+    li:nth-child(3n+1){
+      font-size: 1rem;
+      writing-mode: vertical-lr;
+    }
+    li:first-child{
+      color: var(--pale);
+      font-size: 1.5rem;
+      font-weight: 600;
+      writing-mode: horizontal-tb;
+    }
+    li:last-child{
+      font-size: .95rem;
+      grid-column: span 2;
+    }
+  }
+}
+
+.world--container ul li {
+  opacity: 0;
+  animation: countryIn forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes countryIn {
+  from {
+    opacity: 0;
+    transform: scale(0.25) rotate(20deg) translateX(#{rel(100px)});
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0) translateX(0);
+  }
+}

@@ -1,0 +1,87 @@
+// ---------------------------------------------
+// Feature: variantes por disciplina (show-*)
+// Las clases show-* las aplica js/script.js según el item del menú.
+// ---------------------------------------------
+@use '../../abstracts/' as *;
+
+.showFeature.show {
+  &.show-layout {
+    .contentItem-layout {
+      display: grid;
+    }
+
+    .placeholder1 {
+      background-image: url('../images/works/spines1.png');
+    }
+    .placeholder2 {
+      background-image: url('../images/works/cdr2.jpg');
+    }
+  }
+
+  &.show-css {
+    .contentItem-css {
+      display: grid;
+    }
+
+    .placeholder {
+      background-image: url('../images/works/modular.png');
+    }
+  }
+
+  &.show-ui {
+    .contentItem-ui {
+      display: grid;
+    }
+
+    .placeholder1 {
+      background-image: url('../images/works/spines2.png');
+    }
+    .placeholder2 {
+      background-image: url('../images/works/spines6.png');
+    }
+  }
+
+  &.show-rwd {
+    .contentItem-rwd {
+      display: grid;
+    }
+
+    .placeholder1 {
+      background-image: url('../images/works/responsive-group.png');
+    }
+  }
+
+  &.show-music {
+    .contentItem-music {
+      display: grid;
+    }
+
+    .placeholder {
+      background-image: url('../images/works/traginer1.jpg');
+    }
+    // TODO(fase 5): .is-music no existe en el HTML
+    .is-music{
+      @media only screen and (max-width: 48em){
+        grid-column: 1/-1;
+      }
+    }
+  }
+}
+
+// ---------------------------------------------
+// Contenedor con borde inferior decorativo
+// TODO(fase 5): .featurebtm--three no existe en el HTML
+// ---------------------------------------------
+.container.featurebtm--three{
+  &::after{
+    content: '';
+    background: url('../images/deco-invertsml-3.svg') no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    min-height: #{rel(50px)};
+    bottom: -#{rel(1px)};
+    left: 0;
+    z-index: 1;
+  }
+}

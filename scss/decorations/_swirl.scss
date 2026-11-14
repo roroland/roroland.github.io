@@ -3,6 +3,25 @@
 // ---------------------------------------------
 @use '../abstracts' as *;
 
+// SVG de decoración dentro de la sección about
+.container .test{
+  width: 100%;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: 0;
+
+  @media only screen and (max-width: 48em) {
+    min-height: #{rel(120px)};
+    max-width: 100%;
+  }
+  #middle{
+    transform-origin: center;
+  }
+}
+
 // --- Animación swirlMiddle ---
 // Aplica movimiento horizontal cíclico a la capa SVG con id "middle"
 @keyframes swirlMiddle {

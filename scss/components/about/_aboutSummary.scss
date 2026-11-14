@@ -1,0 +1,42 @@
+// ---------------------------------------------
+// About: cuadrícula del resumen y textos
+// ---------------------------------------------
+@use '../../abstracts/' as *;
+@use '../../base/typography';
+
+.about .aboutSummary{
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: var(--component-space);
+  overflow-x: clip;
+  padding: 0 0 var(--component-space) 0;
+  @media only screen and (min-width: 90em){
+    padding: 0 0 var(--component-space) 0;
+  }
+  p,
+  a{
+    @extend .h4;
+  }
+  p{
+    color: var(--dark);
+    font-weight: 300;
+    display: inline-block;
+    padding: .25em var(--component-space) 0;
+    margin-bottom: var(--component-space-tiny);
+    > span{
+      @extend .h3;
+      font-weight: 600;
+    }
+    a{
+      font-size: 1rem;
+    }
+  }
+  .timeline--panel{
+    margin: 4rem 0;
+  }
+  .timeline--panel p{
+    background: var(--dark-a);
+    font-size: 1em;
+  }
+}

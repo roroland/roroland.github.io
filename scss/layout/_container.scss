@@ -1,11 +1,6 @@
 // ---------------------------------------------
-// Bloque principal: Containers
-// Estilos para los contenedores principales del layout.
-// Incluye layout, responsive y decoraciones.
+// Layout: contenedor de sección
 // ---------------------------------------------
-@use '../abstracts/' as *;
-
-// Containers
 .container{
   min-height: 100vh;
   margin: 0 auto;
@@ -17,93 +12,4 @@
   a:hover{
     color: var(--darkred);
   }
-  .test{
-    width: 100%;
-    position: relative;
-    left: 0;
-    right: 0;
-    top: 0;
-    overflow: hidden;
-    z-index: 0;
-
-    @media only screen and (max-width: 48em) {
-      min-height: #{rel(120px)};
-      max-width: 100%;
-    }
-    #middle{
-      transform-origin: center;
-    }
-  }
-  &.intro{
-    align-items: center;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    padding: 0;
-    @media only screen and (max-width: 47.99em){
-      min-height: calc(100vh - #{rel(80px)});
-    }
-    @media only screen and (max-width: 47.99em) and (orientation: landscape){
-      min-height: 82vh;
-    }
-    @media only screen and (min-width: 48em){
-      flex-flow: column nowrap;
-      justify-content: center;
-      min-height: 91vh;
-      padding: inherit;
-    }
-    @media only screen and (min-width: 64em){
-      min-height: 85vh;
-    }
-    @media only screen and (min-width: 100em){
-      min-height: 90vh;
-      justify-content: center;
-    }
-  }
-  &.featurebtm--three{
-    &::after{
-      content: '';
-      background: url('../images/deco-invertsml-3.svg') no-repeat;
-      background-size: cover;
-      position: absolute;
-      width: 100%;
-      min-height: #{rel(50px)};
-      bottom: -#{rel(1px)};
-      left: 0;
-      z-index: 1;
-    }
-  }
 }
-.menuTop{
-  // Trigger to switch class for main menu
-  display: block;
-}
-.line{
-  margin: var(--component-space) 0;
-  position: relative;
-  &.line-over{
-    margin: var(--component-space) 0 0;
-    top: -2rem;
-    &:last-of-type{
-      top: 0;
-    }
-  }
-}
-
-// Anchors offsets
-.offset{
-  position: relative;
-  display: inline-block;
-  height: 0;
-  width: 0;
-  &[data-offset='about']{
-    top: var(--data-about);
-  }
-  &[data-offset='what']{
-    top: var(--data-what);
-  }
-  &[data-offset='works']{
-    top: var(--data-works);
-  }
-}
-

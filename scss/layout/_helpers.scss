@@ -1,0 +1,37 @@
+// ---------------------------------------------
+// Layout: utilidades de estructura
+// .menuTop (hook del menú), .line (separadores), .offset (anclas)
+// ---------------------------------------------
+
+.menuTop{
+  // Trigger to switch class for main menu
+  display: block;
+}
+.line{
+  margin: var(--component-space) 0;
+  position: relative;
+  &.line-over{
+    margin: var(--component-space) 0 0;
+    top: -2rem;
+    &:last-of-type{
+      top: 0;
+    }
+  }
+}
+
+// Anchors offsets
+.offset{
+  position: relative;
+  display: inline-block;
+  height: 0;
+  width: 0;
+  &[data-offset='about']{
+    top: var(--data-about);
+  }
+  &[data-offset='what']{
+    top: var(--data-what);
+  }
+  &[data-offset='works']{
+    top: var(--data-works);
+  }
+}

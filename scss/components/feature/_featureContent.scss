@@ -1,23 +1,19 @@
 // ---------------------------------------------
-// Bloque principal: Feature Content
-// Estilos para el contenido destacado de cada sección.
-// Incluye layout, animaciones, y elementos visuales.
+// Feature: contenido interno (textos y submenú)
 // ---------------------------------------------
-// Feature inner content
-
-@use '../abstracts/' as *;
+@use '../../abstracts/' as *;
 
 .contentItem-text {
   grid-column: 1 / -1;
   column-count: 1;
-  
+
   @media only screen and (min-width: 64em){
     grid-column: 1 / 2;
     grid-row: 1;
     column-count: 2;
     column-gap: var(--component-space);
-  }  
-  
+  }
+
   .contentItem-header {
     opacity: 0;
     animation: fade .5s ease-out .5s forwards;
@@ -30,8 +26,7 @@
       padding-bottom: var(--component-space);
     }
   }
-  
-  
+
   .all-span{
     padding: 1em 2em;
     font-size: 1.5em;
@@ -66,7 +61,7 @@
     margin-bottom: var(--component-space-small);
     line-height: 1.6;
   }
-  
+
   &.contentItem--simple {
     grid-template-columns: 1fr;
     .contentItem-text{
@@ -76,6 +71,13 @@
       }
     }
   }
+}
+
+// El <strong> se adapta al fondo de acento dentro del modal
+.contentItem--wrapper strong{
+  color: currentColor;
+  background: rgba(77, 28, 53, 0.25);
+  box-shadow: 2px 2px 0 0px rgba(24, 16, 16, 0.36);
 }
 
 .subMenu{
