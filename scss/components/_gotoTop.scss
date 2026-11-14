@@ -14,7 +14,7 @@
   position: fixed;
   bottom: var(--component-space-small);
   right: 0;
-  z-index: 99;
+  z-index: $z-top;
   // Solo se muestra en móvil: en escritorio ya existe el menú de anclas
   @include tablet{
     display: none;

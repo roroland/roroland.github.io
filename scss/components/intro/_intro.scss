@@ -65,7 +65,7 @@
     position: relative;
     max-width: min(60vw, 45rem);
     transition: top .25s ease-in-out;
-    z-index: 20;
+    z-index: $z-raised;
     width: 100%;
 
     @include phone {
@@ -102,7 +102,7 @@
   }
   h4{
     opacity: 0;
-    z-index: 10;
+    z-index: $z-content;
     @include phone-landscape{
       display: none;
     }

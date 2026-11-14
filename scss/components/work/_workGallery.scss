@@ -39,7 +39,7 @@
     position: sticky;
     top: var(--component-space);
     width: 100%;
-    z-index: 10;
+    z-index: $z-raised;
     @include phone{
       background-color: white;
       box-shadow: 0 #{rel(5px)} #{rel(5px)} var(--dark-a);

@@ -15,7 +15,7 @@
     grid-template-columns: repeat(4, 1fr);
     margin: 0 auto;
     position: relative;
-    z-index: 1;
+    z-index: $z-content;
     @include desktop{
       max-width: 80vw;
     }

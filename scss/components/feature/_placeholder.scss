@@ -59,12 +59,12 @@
     
     &::after {
       background: var(--darkred);
-      z-index: 5;
+      z-index: $z-content;
     }
     &::before {
       background: var(--accent);
       backface-visibility: hidden;
-      z-index: 10;
+      z-index: $z-raised;
     }
   }
   &::after{
@@ -80,7 +80,7 @@
     right: 0;
     height: 100%;
     width: 100%;
-    z-index: 0;
+    z-index: $z-back;
   }
   &::before{
     content: 'Hover Me';
@@ -93,7 +93,7 @@
     top: 50%;
     width: 100%;
     height: #{rel(200px)};
-    z-index: 10;
+    z-index: $z-raised;
   }
   &:hover{
     cursor: move;

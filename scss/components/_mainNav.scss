@@ -48,7 +48,7 @@
   justify-content: center;
   animation: mainNavIntro 1s 3.5s ease-out forwards;
   transition: height .125s ease-in-out, color .5s ease-in-out, background-color .5s ease-in-out, opacity .2s ease-in-out;
-  z-index: 999;
+  z-index: $z-top;
   ul{
     display: flex;
     flex: 1;
