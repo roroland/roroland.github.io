@@ -1515,6 +1515,22 @@ footer p a {
   color: var(--blue);
 }
 
+html:has(.blogRoof) {
+  scroll-padding-block-start: calc(100vw * 192 / 1636);
+}
+
+.blogRoof {
+  inset-block-start: 0;
+  position: sticky;
+  width: 100%;
+  z-index: 2;
+}
+.blogRoof .swirl {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
 .container.blog,
 .container.post {
   display: flex;

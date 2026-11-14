@@ -16,6 +16,11 @@
 <body>
   <main>
     {% include "partials/mainNav.njk" %}
+    <div class="blogRoof" aria-hidden="true">
+      {# Solo la mitad inferior del swirl: actúa como techo sticky #}
+      {% set swirlViewBox = "150 192 1636 192" %}
+      {% include "partials/swirl.njk" %}
+    </div>
     {{ content | safe }}
   </main>
 

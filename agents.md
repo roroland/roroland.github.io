@@ -117,6 +117,9 @@ Reglas del contrato (aplicadas por Stylelint):
 - Layouts: `layouts/base.njk` (head/nav/footer) → `layouts/blog.njk` (listado)
   y `layouts/post.njk` (artículo + prosa). La nav vive en
   `_includes/partials/mainNav.njk` y la usan tanto la home como el blog.
+- El swirl es un include reutilizable (`partials/swirl.njk`): la home lo usa
+  completo y `layouts/base.njk` lo recorta con `swirlViewBox` a su mitad
+  inferior para el techo sticky (`.blogRoof`) del blog y del post.
 
 ### Customization
 
