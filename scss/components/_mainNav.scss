@@ -32,6 +32,7 @@
   }
 }
 .mainNav{
+  --delay: 3.5s;
   background-color: var(--lightest-a);
   border-bottom: #{rel(1px)} solid var(--light-a);
   box-shadow: 0 0 0 rgba(0,0,0,0);
@@ -46,7 +47,7 @@
   margin: 0 auto;
   max-width: 100%;
   justify-content: center;
-  animation: mainNavIntro 1s 3.5s ease-out forwards;
+  animation: mainNavIntro 1s var(--delay) ease-out forwards;
   transition: height .125s ease-in-out, color .5s ease-in-out, background-color .5s ease-in-out, opacity .2s ease-in-out;
   z-index: $z-top;
   ul{
@@ -105,11 +106,16 @@
 @supports (animation-timeline: scroll()){
   .mainNav{
     --maxNavWidth: 100%;
-    animation: mainNavIntro 1s 3.5s ease-out forwards, mainNavScroll linear both;
+    animation: mainNavIntro 1s var(--delay) ease-out forwards, mainNavScroll linear both;
     animation-timeline: auto, scroll();
     animation-range: normal, 0% 8%;
     @include tablet{
       --maxNavWidth: min(60%, #{rel(560px)});
     }
   }
+}
+
+// El blog entra sin retardo: la nav aparece de inmediato.
+.blogPage .mainNav{
+  --delay: 0s;
 }
