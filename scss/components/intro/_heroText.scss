@@ -16,7 +16,9 @@
 }
 .heroText {
   opacity: 0;
-  animation: introHero 1s 0s ease-out forwards;
+  animation:
+    borderColorFade 1s 2.5s ease-out forwards,
+    introHero 1s 0s ease-out forwards;
 }
 .intro--wrapper h3 {
   opacity: 0;
@@ -33,10 +35,4 @@
   to {
     border-color: #e5e5e5;
   }
-}
-.heroText {
-  border: 2px solid transparent;
-  animation:
-    borderColorFade 1s 2.5s ease-out forwards,
-    introHero 1s 0s ease-out forwards;
 }

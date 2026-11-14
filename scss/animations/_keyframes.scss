@@ -3,6 +3,16 @@
 // Usados por las animaciones de about.
 // ---------------------------------------------
 
+// Fundido (intro y feature)
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
 @keyframes top {
   from {
     transform: translateY(-100px);

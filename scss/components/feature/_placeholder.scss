@@ -68,16 +68,6 @@
       backface-visibility: hidden;
       z-index: 10;
     }
-    
-    @keyframes flip {
-      0% {
-        transform: rotate3d(1, 0, 0, 0);
-      }
-      
-      100% {
-        transform: rotate3d(1, 0, 0, 90deg);
-      }
-    }
   }
   &::after{
     content: '';
@@ -121,6 +111,16 @@
     .subMenu{
       display: flex;
     }
+  }
+}
+
+@keyframes flip {
+  0% {
+    transform: rotate3d(1, 0, 0, 0);
+  }
+
+  100% {
+    transform: rotate3d(1, 0, 0, 90deg);
   }
 }
 

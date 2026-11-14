@@ -3,6 +3,7 @@
 // ---------------------------------------------
 @use '../abstracts' as *;
 
+// Aparición por scroll (usada por .animatable)
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -12,11 +13,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-// TODO(fase 3): unificar con la opacity declarada aquí abajo
-.animatable {
-  opacity: 0;
 }
 
 .animatable {

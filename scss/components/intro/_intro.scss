@@ -89,31 +89,6 @@
       animation-fill-mode: forwards;
     }
   }
-  @keyframes colorBg {
-    from{
-      background-color: transparent;
-    }
-    to{
-      background-color: var(--lightest);
-    }
-  }
-  @keyframes borderColor {
-    from{
-      border: 1pt solid transparent;
-    }
-    to{
-      border: 1pt solid var(--light);
-    }
-  }
-  @keyframes dash {
-    from {
-      stroke-dashoffset: 100;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-
   .heroText,
   h3,
   h4{
@@ -154,13 +129,30 @@
       }
     }
   }
+}
 
-  @keyframes fade {
-    0%{
-      opacity: 0;
-    }
-    100%{
-      opacity: 1;
-    }
+// Keyframes de la animación del hero (usados por .heroText y sus paths)
+@keyframes colorBg {
+  from{
+    background-color: transparent;
+  }
+  to{
+    background-color: var(--lightest);
+  }
+}
+@keyframes borderColor {
+  from{
+    border: 1pt solid transparent;
+  }
+  to{
+    border: 1pt solid var(--light);
+  }
+}
+@keyframes dash {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
   }
 }
