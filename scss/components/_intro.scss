@@ -17,7 +17,7 @@
   width: 100%;
   @media only screen and (min-width: 48em){
     flex-flow: column nowrap;
-    gap: calc(#{$component-space} * 2);
+    gap: calc(var(--component-space) * 2);
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -35,7 +35,7 @@
   .heroText{
     border-radius: #{rel(5px)};
     border: 1pt solid transparent;
-    padding: $component-space-tiny $component-space;
+    padding: var(--component-space-tiny) var(--component-space);
     display: block;
     position: relative;
     z-index: 99999;
@@ -47,7 +47,7 @@
     @media only screen and (max-width: 47.99em) {
       border: 0;
       padding: 0;
-      margin-bottom: $component-space;
+      margin-bottom: var(--component-space);
       width: 85%;
     }
     @media only screen and (min-width: 48em) {

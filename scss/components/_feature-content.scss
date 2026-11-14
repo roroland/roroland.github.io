@@ -15,7 +15,7 @@
     grid-column: 1 / 2;
     grid-row: 1;
     column-count: 2;
-    column-gap: $component-space;
+    column-gap: var(--component-space);
   }  
   
   .contentItem-header {
@@ -27,7 +27,7 @@
     h3 {
       color: white;
       font-weight: normal;
-      padding-bottom: $component-space;
+      padding-bottom: var(--component-space);
     }
   }
   
@@ -63,7 +63,7 @@
   min-height: 60vh;
   p {
     color: white;
-    margin-bottom: $component-space-small;
+    margin-bottom: var(--component-space-small);
     line-height: 1.6;
   }
   
@@ -96,7 +96,7 @@
     }
   }
   a{
-    padding: $component-space-tiny;
+    padding: var(--component-space-tiny);
     color: #fff;
     background: var(--accent);
     text-decoration: none;

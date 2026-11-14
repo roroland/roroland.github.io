@@ -116,9 +116,9 @@
     color: white;
     font-size: .75em;
     position: absolute;
-    right: $component-space;
-    top: $component-space;
-    padding-right: $component-space-small;
+    right: var(--component-space);
+    top: var(--component-space);
+    padding-right: var(--component-space-small);
     z-index: 999;
   }
   
@@ -143,12 +143,12 @@
       z-index: 1;
     }
     > ul{
-      margin-bottom: $component-space;
+      margin-bottom: var(--component-space);
     }  
     li {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: min-content 1fr;
-      column-gap: $component-space-small;
+      column-gap: var(--component-space-small);
     }
     .link{
       color: var(--darkred);
