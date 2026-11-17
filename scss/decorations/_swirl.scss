@@ -4,7 +4,11 @@
 @use '../abstracts' as *;
 
 // SVG de decoración dentro de la sección about
-.container .swirl{
+.swirl{
+  --middle: 10;
+  --grey: calc(var(--middle) - 2);
+  --redtop: calc(var(--middle) - 3);
+  --blue: calc(var(--middle) - 2);
   width: 100%;
   position: relative;
   left: 0;
@@ -12,6 +16,9 @@
   top: 0;
   overflow: hidden;
   z-index: $z-back;
+  .blogRoof &{
+     --middle: 25; 
+  }
 
   @include phone {
     min-height: #{rel(120px)};
@@ -34,7 +41,7 @@
 }
 #middle {
   // Animación de la capa central de decoración SVG
-  animation: swirlMiddle 10s ease-in-out infinite alternate;
+  animation: swirlMiddle calc(var(--middle) * 1s) ease-in-out infinite alternate;
 }
 
 // --- Animación swirlGrey ---
@@ -49,7 +56,7 @@
 }
 #grey {
   // Animación de la capa gris de decoración SVG
-  animation: swirlGrey 8s ease-in-out infinite alternate;
+  animation: swirlGrey calc(var(--grey) * 1s) ease-in-out infinite alternate;
 }
 
 // --- Animación swirlRedTop ---
@@ -64,7 +71,7 @@
 }
 #redtop {
   // Animación de la capa roja superior de decoración SVG
-  animation: swirlRedTop 7s linear infinite alternate;
+  animation: swirlRedTop calc(var(--redtop) * 1s) linear infinite alternate;
 }
 
 // --- Animación swirlBlue ---
@@ -79,5 +86,5 @@
 }
 #blue {
   // Animación de la capa azul de decoración SVG
-  animation: swirlBlue 8s ease-in-out infinite alternate;
+  animation: swirlBlue calc(var(--blue) * 1s) ease-in-out infinite alternate;
 }

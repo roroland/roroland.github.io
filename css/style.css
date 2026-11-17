@@ -1749,7 +1749,11 @@ html:has(.blogRoof) {
   animation-range: entry 0% cover 40%;
 }
 
-.container .swirl {
+.swirl {
+  --middle: 10;
+  --grey: calc(var(--middle) - 2);
+  --redtop: calc(var(--middle) - 3);
+  --blue: calc(var(--middle) - 2);
   width: 100%;
   position: relative;
   left: 0;
@@ -1758,13 +1762,16 @@ html:has(.blogRoof) {
   overflow: hidden;
   z-index: 0;
 }
+.blogRoof .swirl {
+  --middle: 25;
+}
 @media only screen and (max-width: 47.99em) {
-  .container .swirl {
+  .swirl {
     min-height: 7.5rem;
     max-width: 100%;
   }
 }
-.container .swirl #middle {
+.swirl #middle {
   transform-origin: center;
 }
 
@@ -1777,7 +1784,7 @@ html:has(.blogRoof) {
   }
 }
 #middle {
-  animation: swirlMiddle 10s ease-in-out infinite alternate;
+  animation: swirlMiddle calc(var(--middle) * 1s) ease-in-out infinite alternate;
 }
 
 @keyframes swirlGrey {
@@ -1789,7 +1796,7 @@ html:has(.blogRoof) {
   }
 }
 #grey {
-  animation: swirlGrey 8s ease-in-out infinite alternate;
+  animation: swirlGrey calc(var(--grey) * 1s) ease-in-out infinite alternate;
 }
 
 @keyframes swirlRedTop {
@@ -1801,7 +1808,7 @@ html:has(.blogRoof) {
   }
 }
 #redtop {
-  animation: swirlRedTop 7s linear infinite alternate;
+  animation: swirlRedTop calc(var(--redtop) * 1s) linear infinite alternate;
 }
 
 @keyframes swirlBlue {
@@ -1813,7 +1820,7 @@ html:has(.blogRoof) {
   }
 }
 #blue {
-  animation: swirlBlue 8s ease-in-out infinite alternate;
+  animation: swirlBlue calc(var(--blue) * 1s) ease-in-out infinite alternate;
 }
 
 /*# sourceMappingURL=style.css.map */
