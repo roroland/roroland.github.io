@@ -7,6 +7,13 @@
 // ---------------------------------------------
 @use '../../abstracts/' as *;
 
+@keyframes blogRoofFade{
+  to{ 
+    opacity: .25; 
+    translate: 0 -30%;
+  }
+}
+
 // El techo tapa la parte superior al hacer scroll: compensa el
 // desplazamiento de foco/anchors para que no quede contenido oculto.
 html:has(.blogRoof){
@@ -15,13 +22,26 @@ html:has(.blogRoof){
 
 .blogRoof{
   inset-block-start: 0;
+  opacity: 1;
   position: sticky;
   width: 100%;
   z-index: $z-raised;
-
+  
   .swirl{
     display: block;
     height: auto;
     width: 100%;
+  }
+}
+
+// Scroll transition: al 20% del scroll del root el techo queda
+// un 30% transparente (opacity .7) y mantiene ese estado.
+@media (prefers-reduced-motion: no-preference){
+  @supports ((animation-timeline: scroll()) and (animation-range: 0% 20%)){
+    .blogRoof{
+      animation: blogRoofFade linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0% 20%;
+    }
   }
 }

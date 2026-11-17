@@ -1520,12 +1520,21 @@ footer p a {
   color: var(--blue);
 }
 
+@keyframes blogRoofFade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
 html:has(.blogRoof) {
   scroll-padding-block-start: calc(100vw * 192 / 1636);
 }
 
 .blogRoof {
   inset-block-start: 0;
+  opacity: 1;
   position: sticky;
   width: 100%;
   z-index: 2;
@@ -1536,6 +1545,15 @@ html:has(.blogRoof) {
   width: 100%;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) and (animation-range: 0% 20%) {
+    .blogRoof {
+      animation: blogRoofFade linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0% 20%;
+    }
+  }
+}
 .container.blog,
 .container.post {
   display: flex;
